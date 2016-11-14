@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+exec \
+	s6-setuidgid abc /opt/domoticz/domoticz \
+		-sslwww 1443 \
+		-sslcert /config/server_cert.pem \
+		-userdata /config/ \
+		-dbase /config/domoticz.db \
+		-syslog

@@ -1,7 +1,7 @@
 [linuxserverurl]: https://linuxserver.io
 [forumurl]: https://forum.linuxserver.io
-[ircurl]: https://www.linuxserver.io/irc/
-[podcasturl]: https://www.linuxserver.io/podcast/
+[ircurl]: https://www.linuxserver.io/index.php/irc/
+[podcasturl]: https://www.linuxserver.io/index.php/category/podcast/
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
@@ -10,40 +10,53 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [IRC][ircurl] on freenode at `#linuxserver.io`
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
-# <image-name>
+# linuxserver/domoticz
 
-Provide a short, concise description of the application. No more than two SHORT paragraphs. Link to sources where possible and include an image illustrating your point if necessary. Point users to the original applications website, as that's the best place to get support - not here.
+[Domoticz](https://www.domoticz.com/) is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device
 
-Our Plex container has immaculate docs so follow that if in doubt for layout.
-
-`IMPORTANT, replace all instances of <image-name> with the correct dockerhub repo (ie linuxserver/plex) and <container-name> information (ie, plex)`
+[![domoticz](https://github.com/domoticz/domoticz/raw/master/www/images/logo.png)][domoticzurl]
+[domoticzurl]: https://www.domoticz.com
 
 ## Usage
 
 ```
 docker create \
-  --name=<container-name> \
+  --name=domoticz \
+  --net=bridge \
   -v <path to data>:/config \
   -e PGID=<gid> -e PUID=<uid>  \
-  -p 1234:1234 \
-  <image-name>
+  -p 8080:8080 \
+  -p 1443:1443 \
+  -p 6144:6144 \
+  --device=/dev/ttyUSB0 \
+  linuxserver/domoticz
 ```
 
-## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
-For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
-So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
-http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
-
-
+**Parameters**
 
 * `-p 1234` - the port(s)
 * `-v /config` - explain what lives here
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `--device=/dev/ttyUSB0` - for passing through USB devices
+* `-e TZ` - for timezone information *eg Europe/London, etc*
 
-It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it <container-name> /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it domoticz /bin/bash`.
+
+### Passing Through USB Devices
+
+To get full use of Domoticz, you probably have a USB device you want to pass through. To figure out which device to pass through, you have to connect the device and look in dmesg for the device node created. Issue the command 'dmesg | tail' after you connected your device and you should see something like below.
+
+```
+usb 1-1.2: new full-speed USB device number 7 using ehci-pci
+ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+usb 1-1.2: Detected FT232RL
+usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+```
+
+As you can see above, the device node created is ttyUSB0. It does not say where, but it's almost always in /dev/. The correct tag for passing through this USB device is '--device=/dev/ttyUSB0'
+
 
 ### User / Group Identifiers
 
@@ -58,22 +71,14 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application
 
-Insert a basic user guide here to get a n00b up and running with the software inside the container. DELETE ME
-
+To configure Domoticz, go to the IP of your docker host on the port you configured (default 8080), and add your hardware in Setup > Hardware.
+The user manual is available at [www.domoticz.com](https://www.domoticz.com)
 
 ## Info
 
-* Shell access whilst the container is running: `docker exec -it <container-name> /bin/bash`
-* To monitor the logs of the container in realtime: `docker logs -f <container-name>`
-
-* container version number 
-
-`docker inspect -f '{{ index .Config.Labels "build_version" }}' <container-name>`
-
-* image version number
-
-`docker inspect -f '{{ index .Config.Labels "build_version" }}' <image-name>`
+* Shell access whilst the container is running: `docker exec -it domoticz /bin/bash`
+* To monitor the logs of the container in realtime: `docker logs -f domoticz`
 
 ## Versions
 
-+ **dd.MM.yy:** This is the standard Version type now.
++ **10.10.2016:** Initial release.

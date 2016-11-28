@@ -8,7 +8,7 @@ mkdir -p \
 [[ ! -e /config/scripts ]] && \
 	cp -R /opt/domoticz/scripts /config/
 
-# copy default ssl certificate
+# generate ssl certificate
 if [ ! -e /config/keys/server_cert.pem ]; then
 openssl dhparam -out /config/keys/RSA2048.pem -5 2048
 openssl req -x509 -nodes -days 365 \

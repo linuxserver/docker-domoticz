@@ -10,11 +10,12 @@ mkdir -p \
 
 # generate ssl certificate
 if [ ! -e /config/keys/server_cert.pem ]; then
-openssl dhparam -out /config/keys/RSA2048.pem -5 2048
-openssl req -x509 -nodes -days 365 \
--newkey rsa:2048 -keyout /config/keys/server_cert.pem  -out /config/keys/server_cert.pem \
--subj "/CN=domoticz"
-cat /config/keys/RSA2048.pem >> /config/keys/server_cert.pem
+	[[ -e /config/keys/RSA2048.pem ]] && rm /config/keys/RSA2048.pem
+		openssl dhparam -out /config/keys/RSA2048.pem -5 2048
+		openssl req -x509 -nodes -days 365 \
+		-newkey rsa:2048 -keyout /config/keys/server_cert.pem  -out /config/keys/server_cert.pem \
+		-subj "/CN=domoticz"
+		cat /config/keys/RSA2048.pem >> /config/keys/server_cert.pem
 fi
 
 # set permissions for /config

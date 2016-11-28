@@ -1,12 +1,21 @@
 #!/usr/bin/with-contenv bash
 
+# make our folders
+mkdir -p \
+	/config/keys
+
 # copy default scripts from install
 [[ ! -e /config/scripts ]] && \
 	cp -R /opt/domoticz/scripts /config/
 
 # copy default ssl certificate
-[[ ! -e /config/server_cert.pem ]] && \
-	cp /opt/domoticz/server_cert.pem /config/server_cert.pem
+if [ ! -e /config/keys/server_cert.pem ]; then
+openssl dhparam -out /config/keys/RSA2048.pem -5 2048
+openssl req -x509 -nodes -days 365 \
+-newkey rsa:4096 -keyout /config/keys/server_cert.pem  -out /config/keys/server_cert.pem \
+-subj "/CN=domoticz"
+cat /config/keys/RSA2048.pem >> /config/keys/server_cert.pem
+fi
 
 # set permissions for /config
 chown -R abc:abc \

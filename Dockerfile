@@ -9,9 +9,6 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 # Environment settings
 ENV HOME="/config"
 
-# copy local files
-COPY root/ /
-
 # install build dependencies
 RUN \
  apk add --no-cache --virtual=build-dependencies \
@@ -60,6 +57,7 @@ RUN \
 	libstdc++ \
 	libusb \
 	libusb-compat \
+	openssl \
 	zlib && \
 
 # add abc to dialout and cron group trying to fix different GID for dialout group
@@ -70,7 +68,10 @@ RUN \
  rm -rf \
 	/tmp/*
 
+# copy local files
+COPY root/ /
+
 # ports and volumes
 EXPOSE 8080 6144 1443
 
-VOLUME /config 
+VOLUME /config

@@ -9,6 +9,9 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 # Environment settings
 ENV HOME="/config"
 
+# copy prebuilds
+COPY prebuilds/ /
+
 # install build dependencies
 RUN \
  apk add --no-cache --virtual=build-dependencies \
@@ -73,5 +76,4 @@ COPY root/ /
 
 # ports and volumes
 EXPOSE 8080 6144 1443
-
 VOLUME /config

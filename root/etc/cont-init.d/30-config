@@ -6,7 +6,7 @@ mkdir -p \
 
 # copy default scripts from install
 [[ ! -e /config/scripts ]] && \
-	cp -R /opt/domoticz/scripts /config/
+	cp -R /var/lib/domoticz/scripts /config/
 
 # generate ssl certificate
 if [ ! -e /config/keys/server_cert.pem ]; then

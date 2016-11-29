@@ -10,7 +10,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 ENV HOME="/config"
 
 # copy prebuilds
-COPY prebuilds/ /
+COPY prebuilds/ /usr/
 
 # install build dependencies
 RUN \
@@ -19,7 +19,6 @@ RUN \
 	automake \
 	boost-dev \
 	cmake \
-	coreutils \
 	curl-dev \
 	eudev-dev \
 	g++ \
@@ -28,7 +27,10 @@ RUN \
 	libcurl \
 	libusb-compat-dev \
 	libusb-dev \
+	linux-headers \
+	lua5.2-dev \
 	make \
+	mosquitto-dev \
 	openssl-dev \
 	pkgconf \
 	sqlite-dev \
@@ -40,28 +42,48 @@ RUN \
  ln -s /tmp/open-zwave /tmp/open-zwave-read-only && \
  cd /tmp/open-zwave && \
  make && \
+ make \
+	instlibdir=usr/lib \
+	pkgconfigdir="usr/lib/pkgconfig/" \
+	PREFIX=/usr \
+	sysconfdir=etc/openzwave \
+	install && \
 
 # build domoticz
  git clone https://github.com/domoticz/domoticz.git /tmp/domoticz && \
  cd /tmp/domoticz && \
- cmake -USE_STATIC_OPENZWAVE -DCMAKE_BUILD_TYPE=Release . && \
+cmake \
+	-DBUILD_SHARED_LIBS=True \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_INSTALL_PREFIX=/var/lib/domoticz \
+	-DOpenZWave=/usr/lib/libopenzwave.so \
+	-DUSE_BUILTIN_LUA=OFF \
+	-DUSE_BUILTIN_MQTT=OFF \
+	-DUSE_BUILTIN_SQLITE=OFF \
+	-DUSE_STATIC_LIBSTDCXX=OFF \
+	-DUSE_STATIC_OPENZWAVE=OFF && \
  make && \
  make install && \
+
+# determine runtime packages
+ RUNTIME_PACKAGES="$( \
+	scanelf --needed --nobanner /var/lib/domoticz/domoticz \
+	| awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
+	| sort -u \
+	| xargs -r apk info --installed \
+	| sort -u \
+	)" && \
+
+# install runtime dependencies
+ apk add --no-cache \
+	eudev-libs \
+	openssl \
+	$RUNTIME_PACKAGES && \
 
 # cleanup build dependencies
  apk del --purge \
 	build-dependencies && \
 
-# install runtime dependencies
- apk add --no-cache \
-	libcrypto1.0 \
-	libcurl \
-	libssl1.0 \
-	libstdc++ \
-	libusb \
-	libusb-compat \
-	openssl \
-	zlib && \
 
 # add abc to dialout and cron group trying to fix different GID for dialout group
  usermod -a -G 16 abc && \

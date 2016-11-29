@@ -86,8 +86,7 @@ cmake \
 
 
 # add abc to dialout and cron group trying to fix different GID for dialout group
- usermod -a -G 16 abc && \
- usermod -a -G 20 abc && \
+ usermod -a -G 16,20 abc && \
 
 # cleanup /tmp
  rm -rf \

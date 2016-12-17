@@ -37,6 +37,10 @@ RUN \
 	tar \
 	zlib-dev && \
 
+# add runtime packages required in build stage
+ apk add --no-cache \
+	python3-dev && \
+
 # build OpenZWave
  git clone https://github.com/OpenZWave/open-zwave.git /tmp/open-zwave && \
  ln -s /tmp/open-zwave /tmp/open-zwave-read-only && \

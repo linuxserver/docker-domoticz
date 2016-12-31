@@ -1,4 +1,4 @@
-FROM lsiobase/alpine
+FROM lsiobase/alpine:3.5
 MAINTAINER saarg
 
 # set version label
@@ -20,18 +20,21 @@ RUN \
 	boost-dev \
 	cmake \
 	curl-dev \
+	doxygen \
 	eudev-dev \
 	g++ \
 	gcc \
 	git \
 	libcurl \
+	libftdi1-dev \
 	libusb-compat-dev \
 	libusb-dev \
 	linux-headers \
 	lua5.2-dev \
 	make \
 	mosquitto-dev \
-	openssl-dev \
+	musl-dev \
+	libressl-dev \
 	pkgconf \
 	sqlite-dev \
 	tar \
@@ -44,13 +47,6 @@ RUN \
 	confuse-dev \
 	curl \
 	gzip && \
-
-# install telldus-core build-dependencies from edge
- apk add --no-cache --virtual=telldus-build-dependencies-edge \
-		--repository http://nl.alpinelinux.org/alpine/edge/community \
-	doxygen \
-	libftdi1-dev && \
-
 
 # add runtime packages required in build stage
  apk add --no-cache \
@@ -72,6 +68,7 @@ RUN \
 		https://raw.githubusercontent.com/telldus/telldus/master/telldus-core/Doxyfile.in && \
  cp /tmp/patches/Socket_unix.cpp /tmp/telldus-core/common/Socket_unix.cpp && \
  cp /tmp/patches/ConnectionListener_unix.cpp /tmp/telldus-core/service/ConnectionListener_unix.cpp && \
+ cp /tmp/patches/CMakeLists.txt /tmp/telldus-core/CMakeLists.txt && \
  cd /tmp/telldus-core && \
  cmake -DBUILD_TDADMIN=false -DCMAKE_INSTALL_PREFIX=/tmp/telldus-core . && \
  make && \
@@ -97,7 +94,7 @@ RUN \
 # build domoticz
  git clone https://github.com/domoticz/domoticz.git /tmp/domoticz && \
  cd /tmp/domoticz && \
-cmake \
+ cmake \
 	-DBUILD_SHARED_LIBS=True \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DCMAKE_INSTALL_PREFIX=/var/lib/domoticz \
@@ -128,8 +125,7 @@ cmake \
 # cleanup build dependencies
  apk del --purge \
 	build-dependencies \
-	telldus-build-dependencies \
-	telldus-build-dependencies-edge && \
+	telldus-build-dependencies && \
 
 
 # add abc to dialout and cron group trying to fix different GID for dialout group

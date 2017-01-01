@@ -1,6 +1,9 @@
 FROM lsiobase/alpine:3.5
 MAINTAINER saarg
 
+# package version
+ARG DOMOTICZ_VER="3.5877
+
 # set version label
 ARG BUILD_DATE
 ARG VERSION
@@ -94,6 +97,7 @@ RUN \
 # build domoticz
  git clone https://github.com/domoticz/domoticz.git /tmp/domoticz && \
  cd /tmp/domoticz && \
+ git checkout "${DOMOTICZ_VER}" && \
  cmake \
 	-DBUILD_SHARED_LIBS=True \
 	-DCMAKE_BUILD_TYPE=Release \
@@ -119,7 +123,7 @@ RUN \
 # install runtime dependencies
  apk add --no-cache \
 	eudev-libs \
-	openssl \
+	libressl \
 	$RUNTIME_PACKAGES && \
 
 # cleanup build dependencies

@@ -37,6 +37,7 @@ RUN \
 	make \
 	mosquitto-dev \
 	musl-dev \
+	openzwave-dev \
 	libressl-dev \
 	pkgconf \
 	sqlite-dev \
@@ -53,6 +54,7 @@ RUN \
 
 # add runtime packages required in build stage
  apk add --no-cache \
+	openzwave \
 	python3-dev && \
 
 # link libftdi as the alpine guys named the libs wrong
@@ -81,18 +83,6 @@ RUN \
  mv /tmp/telldus-core/client/telldus-core.h /usr/include/telldus-core.h && \
  ln -s /usr/lib/libtelldus-core.so.2.1.2 /usr/lib/libtelldus-core.so.2 && \
  ln -s /usr/lib/libtelldus-core.so.2 /usr/lib/libtelldus-core.so && \
-
-# build OpenZWave
- git clone https://github.com/OpenZWave/open-zwave.git /tmp/open-zwave && \
- ln -s /tmp/open-zwave /tmp/open-zwave-read-only && \
- cd /tmp/open-zwave && \
- make && \
- make \
-	instlibdir=usr/lib \
-	pkgconfigdir="usr/lib/pkgconfig/" \
-	PREFIX=/usr \
-	sysconfdir=etc/openzwave \
-	install && \
 
 # build domoticz
  git clone https://github.com/domoticz/domoticz.git /tmp/domoticz && \

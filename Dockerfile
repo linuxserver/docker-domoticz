@@ -2,7 +2,7 @@ FROM lsiobase/alpine:3.5
 MAINTAINER saarg
 
 # package version
-ARG DOMOTICZ_VER="3.5877
+ARG DOMOTICZ_VER="3.5877"
 
 # set version label
 ARG BUILD_DATE
@@ -30,6 +30,7 @@ RUN \
 	git \
 	libcurl \
 	libftdi1-dev \
+	libressl-dev \
 	libusb-compat-dev \
 	libusb-dev \
 	linux-headers \
@@ -38,7 +39,7 @@ RUN \
 	mosquitto-dev \
 	musl-dev \
 	openzwave-dev \
-	libressl-dev \
+	python3-dev \
 	pkgconf \
 	sqlite-dev \
 	tar \
@@ -54,8 +55,7 @@ RUN \
 
 # add runtime packages required in build stage
  apk add --no-cache \
-	openzwave \
-	python3-dev && \
+	openzwave && \
 
 # link libftdi as the alpine guys named the libs wrong
  ln -s /usr/lib/libftdi1.so /usr/lib/libftdi.so && \
@@ -114,13 +114,13 @@ RUN \
  apk add --no-cache \
 	eudev-libs \
 	libressl \
+	python3 \
 	$RUNTIME_PACKAGES && \
 
 # cleanup build dependencies
  apk del --purge \
 	build-dependencies \
 	telldus-build-dependencies && \
-
 
 # add abc to dialout and cron group trying to fix different GID for dialout group
  usermod -a -G 16,20 abc && \

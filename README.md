@@ -28,9 +28,9 @@ docker create \
   -v <path to data>:/config \
   -e PGID=<gid> -e PUID=<uid>  \
   -e TZ=<timezone> \
-  -p 8080:8080 \
   -p 1443:1443 \
   -p 6144:6144 \
+  -p 8080:8080 \
   --device=<path to device> \
   linuxserver/domoticz
 ```
@@ -43,11 +43,14 @@ So -p 8080:80 would expose port 80 from inside the container to be accessible fr
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
 
 
-
-* `-p 1234` - the port(s)
-* `-v /config` - explain what lives here
+* `-p 1443` - the port(s)
+* `-p 6144` - the port(s)
+* `-p 8080` - the port(s)
+* `-v /config` - location for the config files
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `--device` - for passing through USB devices
+* `-e TZ` - for timezone information *eg Europe/London, etc*
 
 It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it domoticz /bin/bash`.
 

@@ -95,4 +95,4 @@ The user manual is available at [www.domoticz.com][domoticzurl]
 
 ## Versions
 
-+ **dd.MM.yy:** This is the standard Version type now.
++ **03.01.17:** Initial Release.

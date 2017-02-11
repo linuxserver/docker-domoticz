@@ -35,6 +35,14 @@ docker create \
   linuxserver/domoticz
 ```
 
+You can choose between using tags, latest (default, and no tag required), or a specific stable version of domoticz.
+
+Add one of the tags, if required, to the linuxserver/domoticz line of the run/create command in the following format, linuxserver/domoticz:stable-3.5877
+
+#### Tags
+
++ **stable-3.5877** : latest stable version.
+
 ## Parameters
 
 `The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
@@ -98,4 +106,5 @@ The user manual is available at [www.domoticz.com][domoticzurl]
 
 ## Versions
 
-+ **03.01.17:** Initial Release.
++ **11.02.2017:** Update README.
++ **03.01.2017:** Initial Release.

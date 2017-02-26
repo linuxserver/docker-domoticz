@@ -103,5 +103,6 @@ The user manual is available at [www.domoticz.com][domoticzurl]
 
 ## Versions
 
++ **26.02.2017:** Add curl and replace openssl with libressl.
 + **26.11.2016:** Update README to new standard and getting ready for release.
 + **10.10.2016:** Initial dev release.

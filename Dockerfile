@@ -27,6 +27,7 @@ RUN \
 	git \
 	libcurl \
 	libftdi1-dev \
+	libressl-dev \
 	libusb-compat-dev \
 	libusb-dev \
 	linux-headers \
@@ -34,7 +35,6 @@ RUN \
 	make \
 	mosquitto-dev \
 	musl-dev \
-	libressl-dev \
 	pkgconf \
 	sqlite-dev \
 	tar \
@@ -118,8 +118,9 @@ RUN \
 
 # install runtime dependencies
  apk add --no-cache \
+	curl \
 	eudev-libs \
-	openssl \
+	libressl \
 	$RUNTIME_PACKAGES && \
 
 # cleanup build dependencies

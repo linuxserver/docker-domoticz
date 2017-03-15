@@ -2,6 +2,7 @@
 [forumurl]: https://forum.linuxserver.io
 [ircurl]: https://www.linuxserver.io/irc/
 [podcasturl]: https://www.linuxserver.io/podcast/
+[appurl]: https://www.domoticz.com
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
@@ -12,10 +13,9 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 
 # linuxserver/domoticz
 
-[Domoticz][domoticzurl] is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device
+[Domoticz][appurl] is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device
 
-[![domoticz](https://github.com/domoticz/domoticz/raw/master/www/images/logo.png)][domoticzurl]
-[domoticzurl]: https://www.domoticz.com
+[![domoticz](https://github.com/domoticz/domoticz/raw/master/www/images/logo.png)][appurl]
 
 ## Usage
 
@@ -86,7 +86,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ## Setting up the application
 
 To configure Domoticz, go to the IP of your docker host on the port you configured (default 8080), and add your hardware in Setup > Hardware.
-The user manual is available at [www.domoticz.com][domoticzurl]
+The user manual is available at [www.domoticz.com][appurl]
 
 ## Info
 

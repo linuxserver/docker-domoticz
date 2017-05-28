@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.5
+FROM lsiobase/alpine:3.6
 MAINTAINER saarg
 
 # set version label
@@ -15,16 +15,20 @@ COPY patches/ /
 # install build dependencies
 RUN \
  apk add --no-cache --virtual=build-dependencies \
+	argp-standalone \
 	autoconf \
 	automake \
+	binutils \
 	boost-dev \
 	cmake \
+	confuse-dev \
 	curl-dev \
 	doxygen \
 	eudev-dev \
 	g++ \
 	gcc \
 	git \
+	gzip \
 	libcurl \
 	libftdi1-dev \
 	libressl-dev \
@@ -40,16 +44,11 @@ RUN \
 	tar \
 	zlib-dev && \
 
-# install telldus-core build-dependencies
- apk add --no-cache --virtual=telldus-build-dependencies \
-	argp-standalone \
-	binutils \
-	confuse-dev \
-	curl \
-	gzip && \
-
-# add runtime packages required in build stage
+# install runtime packages
  apk add --no-cache \
+	curl \
+	eudev-libs \
+	libressl \
 	python3-dev && \
 
 # link libftdi as the alpine guys named the libs wrong
@@ -61,11 +60,11 @@ RUN \
  mkdir -p \
 	/tmp/telldus-core && \
  curl -o /tmp/telldus-core.tar.gz -L \
-		http://download.telldus.se/TellStick/Software/telldus-core/telldus-core-2.1.2.tar.gz && \
+	http://download.telldus.se/TellStick/Software/telldus-core/telldus-core-2.1.2.tar.gz && \
  tar xf /tmp/telldus-core.tar.gz -C \
 	/tmp/telldus-core --strip-components=1 && \
  curl -o /tmp/telldus-core/Doxyfile.in -L \
-		https://raw.githubusercontent.com/telldus/telldus/master/telldus-core/Doxyfile.in && \
+	https://raw.githubusercontent.com/telldus/telldus/master/telldus-core/Doxyfile.in && \
  cp /tmp/patches/Socket_unix.cpp /tmp/telldus-core/common/Socket_unix.cpp && \
  cp /tmp/patches/ConnectionListener_unix.cpp /tmp/telldus-core/service/ConnectionListener_unix.cpp && \
  cp /tmp/patches/CMakeLists.txt /tmp/telldus-core/CMakeLists.txt && \
@@ -89,7 +88,7 @@ RUN \
 	pkgconfigdir="usr/lib/pkgconfig/" \
 	PREFIX=/usr \
 	sysconfdir=etc/openzwave \
-	install && \
+ install && \
 
 # build domoticz
  git clone https://github.com/domoticz/domoticz.git /tmp/domoticz && \
@@ -103,7 +102,8 @@ RUN \
 	-DUSE_BUILTIN_MQTT=OFF \
 	-DUSE_BUILTIN_SQLITE=OFF \
 	-DUSE_STATIC_LIBSTDCXX=OFF \
-	-DUSE_STATIC_OPENZWAVE=OFF && \
+	-DUSE_STATIC_OPENZWAVE=OFF \
+	-Wno-dev && \
  make && \
  make install && \
 
@@ -116,23 +116,16 @@ RUN \
 	| sort -u \
 	)" && \
 
-# install runtime dependencies
+# install runtime packages
  apk add --no-cache \
-	curl \
-	eudev-libs \
-	libressl \
 	$RUNTIME_PACKAGES && \
-
-# cleanup build dependencies
- apk del --purge \
-	build-dependencies \
-	telldus-build-dependencies && \
-
 
 # add abc to dialout and cron group trying to fix different GID for dialout group
  usermod -a -G 16,20 abc && \
 
-# cleanup /tmp
+# cleanup
+ apk del --purge \
+	build-dependencies && \
  rm -rf \
 	/tmp/* \
 	/usr/lib/libftdi* \

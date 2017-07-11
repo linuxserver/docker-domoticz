@@ -3,6 +3,7 @@
 [ircurl]: https://www.linuxserver.io/irc/
 [podcasturl]: https://www.linuxserver.io/podcast/
 [appurl]: https://www.domoticz.com
+[hub]: https://hub.docker.com/r/linuxserver/domoticz/
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
@@ -12,6 +13,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/domoticz
+[![](https://images.microbadger.com/badges/version/linuxserver/domoticz.svg)](https://microbadger.com/images/linuxserver/domoticz "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/domoticz.svg)](https://microbadger.com/images/linuxserver/domoticz "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/domoticz.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/domoticz.svg)][hub][![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Builders/x86-64/x86-64-domoticz)](https://ci.linuxserver.io/job/Docker-Builders/job/x86-64/job/x86-64-domoticz/)
 
 [Domoticz][appurl] is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device
 
@@ -26,11 +28,11 @@ docker create \
   -v <path to data>:/config \
   -e PGID=<gid> -e PUID=<uid>  \
   -e TZ=<timezone> \
-  -p 8080:8080 \
   -p 1443:1443 \
   -p 6144:6144 \
+  -p 8080:8080 \
   --device=<path to device> \
-  linuxserver/domoticz:stable-3.5877
+  linuxserver/domoticz
 ```
 
 You can choose between using tags, latest (default, and no tag required), or a specific stable version of domoticz.
@@ -47,6 +49,7 @@ Add one of the tags, if required, to the linuxserver/domoticz line of the run/cr
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
+
 
 * `-p 1443` - the port(s)
 * `-p 6144` - the port(s)
@@ -99,10 +102,11 @@ The user manual is available at [www.domoticz.com][appurl]
 
 * image version number
 
-`docker inspect -f '{{ index .Config.Labels "build_version" }}' domoticz`
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/domoticz`
 
 ## Versions
 
-+ **26.02.2017:** Add curl and replace openssl with libressl. Add proper README.
-+ **26.11.2016:** Update README to new standard and getting ready for release.
-+ **10.10.2016:** Initial dev release.
++ **28.05.2017:** Rebase to alpine 3.6.
++ **26.02.2017:** Add curl and replace openssl with libressl.
++ **11.02.2017:** Update README.
++ **03.01.2017:** Initial Release.

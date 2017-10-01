@@ -2,7 +2,7 @@ FROM lsiobase/alpine:3.6
 MAINTAINER saarg
 
 # package version
-ARG DOMOTICZ_VER="3.5877"
+ARG DOMOTICZ_VER="3.8153"
 
 # set version label
 ARG BUILD_DATE

@@ -56,6 +56,7 @@ RUN \
  ln -s /usr/lib/libftdi1.a /usr/lib/libftdi.a && \
  ln -s /usr/include/libftdi1/ftdi.h /usr/include/ftdi.h && \
 
+
 # build telldus-core
  mkdir -p \
 	/tmp/telldus-core && \
@@ -104,8 +105,22 @@ RUN \
 	-DUSE_STATIC_LIBSTDCXX=OFF \
 	-DUSE_STATIC_OPENZWAVE=OFF \
 	-Wno-dev && \
- make && \
+# attempt to set number of cores available for make to use
+ set -ex && \
+ CPU_CORES=$( < /proc/cpuinfo grep -c processor ) || echo "failed cpu look up" && \
+ if echo $CPU_CORES | grep -E  -q '^[0-9]+$'; then \
+	: ;\
+ if [ "$CPU_CORES" -gt 7 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 3 )); \
+ elif [ "$CPU_CORES" -gt 5 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 2 )); \
+ elif [ "$CPU_CORES" -gt 3 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 1 )); fi \
+ else CPU_CORES="1"; fi && \
+
+ make -j $CPU_CORES && \
  make install && \
+ set +ex && \
 
 # determine runtime packages
  RUNTIME_PACKAGES="$( \

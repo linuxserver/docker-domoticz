@@ -41,7 +41,8 @@ Add one of the tags, if required, to the linuxserver/domoticz line of the run/cr
 
 #### Tags
 
-+ **stable-3.5877** : latest stable version.
++ **stable-3.8153** : latest stable version.
++ **stable-3.5877** : no longer updated old stable version.
 
 ## Parameters
 

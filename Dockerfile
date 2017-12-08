@@ -1,22 +1,22 @@
-FROM lsiobase/alpine:3.6
-MAINTAINER saarg
-
-# package version
-ARG DOMOTICZ_VER="3.8153"
+FROM lsiobase/alpine:3.7
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="saarg"
 
-# Environment settings
+# package version
+ARG DOMOTICZ_VER="3.8153"
+
+# environment settings
 ENV HOME="/config"
 
 # copy prebuilds
 COPY patches/ /
 
-# install build dependencies
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	argp-standalone \
 	autoconf \
@@ -47,21 +47,18 @@ RUN \
 	sqlite-dev \
 	tar \
 	zlib-dev && \
-
-# install runtime packages
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	curl \
 	eudev-libs \
 	libressl \
 	openzwave \
 	python3-dev && \
-
-# link libftdi as the alpine guys named the libs wrong
+ echo "**** link libftdi libs ****" && \
  ln -s /usr/lib/libftdi1.so /usr/lib/libftdi.so && \
  ln -s /usr/lib/libftdi1.a /usr/lib/libftdi.a && \
  ln -s /usr/include/libftdi1/ftdi.h /usr/include/ftdi.h && \
-
-# build telldus-core
+ echo "**** build telldus-core ****" && \
  mkdir -p \
 	/tmp/telldus-core && \
  curl -o /tmp/telldus-core.tar.gz -L \
@@ -76,14 +73,12 @@ RUN \
  cd /tmp/telldus-core && \
  cmake -DBUILD_TDADMIN=false -DCMAKE_INSTALL_PREFIX=/tmp/telldus-core . && \
  make && \
-
-# move needed telldus core files and link them
+ echo "**** configure telldus core ****" && \
  mv /tmp/telldus-core/client/libtelldus-core.so.2.1.2 /usr/lib/libtelldus-core.so.2.1.2 && \
  mv /tmp/telldus-core/client/telldus-core.h /usr/include/telldus-core.h && \
  ln -s /usr/lib/libtelldus-core.so.2.1.2 /usr/lib/libtelldus-core.so.2 && \
  ln -s /usr/lib/libtelldus-core.so.2 /usr/lib/libtelldus-core.so && \
-
-# build domoticz
+ echo "**** build domoticz ****" && \
  git clone -b "${DOMOTICZ_VER}" https://github.com/domoticz/domoticz.git /tmp/domoticz && \
  cd /tmp/domoticz && \
  cmake \
@@ -97,7 +92,7 @@ RUN \
 	-DUSE_STATIC_LIBSTDCXX=OFF \
 	-DUSE_STATIC_OPENZWAVE=OFF \
 	-Wno-dev && \
-# attempt to set number of cores available for make to use
+ echo "**** attempt to set number of cores available for make to use ****" && \
  set -ex && \
  CPU_CORES=$( < /proc/cpuinfo grep -c processor ) || echo "failed cpu look up" && \
  if echo $CPU_CORES | grep -E  -q '^[0-9]+$'; then \
@@ -109,12 +104,10 @@ RUN \
  elif [ "$CPU_CORES" -gt 3 ]; then \
 	CPU_CORES=$(( CPU_CORES  - 1 )); fi \
  else CPU_CORES="1"; fi && \
-
  make -j $CPU_CORES && \
  make install && \
  set +ex && \
-
-# determine runtime packages
+ echo "**** determine runtime packages using scanelf ****" && \
  RUNTIME_PACKAGES="$( \
 	scanelf --needed --nobanner /var/lib/domoticz/domoticz \
 	| awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
@@ -122,15 +115,11 @@ RUN \
 	| xargs -r apk info --installed \
 	| sort -u \
 	)" && \
-
-# install runtime packages
  apk add --no-cache \
 	$RUNTIME_PACKAGES && \
-
-# add abc to dialout and cron group trying to fix different GID for dialout group
+ echo "**** add abc to dialout and cron group ****" && \
  usermod -a -G 16,20 abc && \
-
-# cleanup
+ echo " **** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \

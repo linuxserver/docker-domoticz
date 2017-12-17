@@ -107,6 +107,7 @@ The user manual is available at [www.domoticz.com][appurl]
 
 ## Versions
 
++ **08.12.2017:** Rebase to alpine 3.7.
 + **26.11.2017:** Use cpu core counting routine to speed up build time.
 + **28.05.2017:** Rebase to alpine 3.6.
 + **26.02.2017:** Add curl and replace openssl with libressl.

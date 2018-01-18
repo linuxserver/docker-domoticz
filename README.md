@@ -107,6 +107,7 @@ The user manual is available at [www.domoticz.com][appurl]
 
 ## Versions
 
++ **18.01.18:** Remove logging to syslog in the run command to prevent double logging.
 + **04.01.18:** Deprecate cpu_core routine lack of scaling.
 + **08.12.17:** Rebase to alpine 3.7.
 + **26.11.17:** Use cpu core counting routine to speed up build time.

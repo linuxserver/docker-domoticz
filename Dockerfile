@@ -61,9 +61,7 @@ RUN \
  echo "**** build telldus-core ****" && \
  mkdir -p \
 	/tmp/telldus-core && \
- curl -o /tmp/telldus-core.tar.gz -L \
-	http://download.telldus.se/TellStick/Software/telldus-core/telldus-core-2.1.2.tar.gz && \
- tar xf /tmp/telldus-core.tar.gz -C \
+ tar xf /tmp/patches/telldus-core-2.1.2.tar.gz -C \
 	/tmp/telldus-core --strip-components=1 && \
  curl -o /tmp/telldus-core/Doxyfile.in -L \
 	https://raw.githubusercontent.com/telldus/telldus/master/telldus-core/Doxyfile.in && \

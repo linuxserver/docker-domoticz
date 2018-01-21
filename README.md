@@ -106,9 +106,12 @@ The user manual is available at [www.domoticz.com][appurl]
 
 ## Versions
 
-+ **26.11.2017:** Use cpu core counting routine to speed up build time.
-+ **01.10.2017:** Add branch for stable-3.8153.
-+ **28.05.2017:** Rebase to alpine 3.6.
-+ **26.02.2017:** Add curl and replace openssl with libressl.
-+ **11.02.2017:** Update README.
-+ **03.01.2017:** Initial Release.
++ **20.01.18:** Move telldus core to repo to prevent build fail when source site goes down.
++ **18.01.18:** Remove logging to syslog in the run command to prevent double logging.
++ **04.01.18:** Deprecate cpu_core routine lack of scaling.
++ **26.11.17:** Use cpu core counting routine to speed up build time.
++ **01.10.17:** Add branch for stable-3.8153.
++ **28.05.17:** Rebase to alpine 3.6.
++ **26.02.17:** Add curl and replace openssl with libressl.
++ **11.02.17:** Update README.
++ **03.01.17:** Initial Release.

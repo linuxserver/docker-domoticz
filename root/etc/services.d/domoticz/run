@@ -4,5 +4,4 @@ exec \
 		-sslwww 1443 \
 		-sslcert /config/keys/server_cert.pem \
 		-userdata /config/ \
-		-dbase /config/domoticz.db \
-		-syslog
+		-dbase /config/domoticz.db

@@ -92,6 +92,12 @@ RUN \
 	-Wno-dev && \
  make && \
  make install && \
+ echo "**** install BroadlinkRM2 plugin dependencies ****" && \
+ git clone https://github.com/mjg59/python-broadlink.git /tmp/python-broadlink && \
+ cd /tmp/python-broadlink && \
+ git checkout 8bc67af6 && \
+ pip3 install . && \
+ pip3 install pyaes && \
  echo "**** determine runtime packages using scanelf ****" && \
  RUNTIME_PACKAGES="$( \
 	scanelf --needed --nobanner /var/lib/domoticz/domoticz \

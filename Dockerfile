@@ -7,7 +7,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="saarg"
 
 # package version
-ARG DOMOTICZ_VER="3.8153"
+ARG DOMOTICZ_VER="4.9700"
 
 # environment settings
 ENV HOME="/config"

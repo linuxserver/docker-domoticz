@@ -37,11 +37,11 @@ docker create \
 
 You can choose between using tags, latest (default, and no tag required), or a specific stable version of domoticz.
 
-Add one of the tags, if required, to the linuxserver/domoticz line of the run/create command in the following format, linuxserver/domoticz:stable-3.5877
+Add one of the tags, if required, to the linuxserver/domoticz line of the run/create command in the following format, linuxserver/domoticz:stable-4.9700
 
 #### Tags
 
-+ **stable-3.5877** : latest stable version.
++ **stable-4.9700** : latest stable version.
 
 ## Parameters
 
@@ -106,6 +106,7 @@ The user manual is available at [www.domoticz.com][appurl]
 
 ## Versions
 
++ **01.07.18:** Update to latest stable 4.9700.
 + **03.04.18:** Add dependencies for BroadlinkRM2 plugin.
 + **20.01.18:** Move telldus core to repo to prevent build fail when source site goes down.
 + **18.01.18:** Remove logging to syslog in the run command to prevent double logging.

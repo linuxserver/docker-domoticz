@@ -20,6 +20,7 @@ fi
 
 # set permissions for /config
 chown -R abc:abc \
-	/config
+	/config \
+	/tmp
 chmod -R 764 \
 	/config

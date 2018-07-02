@@ -42,6 +42,8 @@ Add one of the tags, if required, to the linuxserver/domoticz line of the run/cr
 #### Tags
 
 + **stable-4.9700** : latest stable version.
++ **stable-3.8153** : no longer updated old stable version.
++ **stable-3.5877** : no longer updated old stable version.
 
 ## Parameters
 
@@ -106,6 +108,7 @@ The user manual is available at [www.domoticz.com][appurl]
 
 ## Versions
 
++ **02.07.18:** Add openssh package.
 + **01.07.18:** Update to latest stable 4.9700.
 + **03.04.18:** Add dependencies for BroadlinkRM2 plugin.
 + **20.01.18:** Move telldus core to repo to prevent build fail when source site goes down.

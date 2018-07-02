@@ -31,6 +31,7 @@ RUN \
 	gzip \
 	libcurl \
 	libftdi1-dev \
+	libffi-dev \
 	libressl-dev \
 	libusb-compat-dev \
 	libusb-dev \
@@ -48,7 +49,10 @@ RUN \
 	curl \
 	eudev-libs \
 	libressl \
-	python3-dev && \
+	python3-dev \
+	py3-cffi \
+	py3-gevent \
+	py3-msgpack	&& \
  echo "**** link libftdi libs ****" && \
  ln -s /usr/lib/libftdi1.so /usr/lib/libftdi.so && \
  ln -s /usr/lib/libftdi1.a /usr/lib/libftdi.a && \
@@ -98,6 +102,8 @@ RUN \
 	-Wno-dev && \
  make && \
  make install && \
+ echo "**** install python-miio dependencies ****" && \
+ pip3 install python-miio && \
  echo "**** install BroadlinkRM2 plugin dependencies ****" && \
  git clone https://github.com/mjg59/python-broadlink.git /tmp/python-broadlink && \
  cd /tmp/python-broadlink && \

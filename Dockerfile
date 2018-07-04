@@ -48,6 +48,7 @@ RUN \
 	curl \
 	eudev-libs \
 	libressl \
+	openssh \
 	python3-dev && \
  echo "**** link libftdi libs ****" && \
  ln -s /usr/lib/libftdi1.so /usr/lib/libftdi.so && \

@@ -52,6 +52,7 @@ RUN \
 	curl \
 	eudev-libs \
 	libressl \
+	openssh \
 	openzwave \
 	python3-dev && \
  echo "**** link libftdi libs ****" && \

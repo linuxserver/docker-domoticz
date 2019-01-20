@@ -41,13 +41,13 @@ Add one of the tags, if required, to the linuxserver/domoticz line of the run/cr
 
 #### Tags
 
-+ **stable-4.9700** : latest stable version.
++ **stable** : latest stable version.
 + **stable-3.8153** : no longer updated old stable version.
 + **stable-3.5877** : no longer updated old stable version.
 
 ## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
@@ -98,7 +98,7 @@ The user manual is available at [www.domoticz.com][appurl]
 * Shell access whilst the container is running: `docker exec -it domoticz /bin/bash`
 * To monitor the logs of the container in realtime: `docker logs -f domoticz`
 
-* container version number 
+* container version number
 
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' domoticz`
 
@@ -108,14 +108,15 @@ The user manual is available at [www.domoticz.com][appurl]
 
 ## Versions
 
++ **16.01.19:** Rebase to Alpine 3.8, add pipeline logic and multi arch, modify tagging to stable and latest.
 + **02.07.18:** Add openssh package.
-+ **01.07.18:** Update to latest stable 4.9700.
++ **01.07.18:** Fix backup/restore in webgui.
 + **03.04.18:** Add dependencies for BroadlinkRM2 plugin.
 + **20.01.18:** Move telldus core to repo to prevent build fail when source site goes down.
 + **18.01.18:** Remove logging to syslog in the run command to prevent double logging.
 + **04.01.18:** Deprecate cpu_core routine lack of scaling.
++ **08.12.17:** Rebase to alpine 3.7.
 + **26.11.17:** Use cpu core counting routine to speed up build time.
-+ **01.10.17:** Add branch for stable-3.8153.
 + **28.05.17:** Rebase to alpine 3.6.
 + **26.02.17:** Add curl and replace openssl with libressl.
 + **11.02.17:** Update README.

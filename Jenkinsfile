@@ -26,8 +26,8 @@ pipeline {
     CI_WEB='true'
     CI_PORT='8080'
     CI_SSL='false'
-    CI_DELAY='240'
-    CI_DOCKERENV='TZ=US/Pacific'
+    CI_DELAY='120'
+    CI_DOCKERENV='TEST_RUN=true'
     CI_AUTH='user:password'
     CI_WEBPATH=''
   }
@@ -208,6 +208,15 @@ pipeline {
                 echo "true" > /tmp/${COMMIT_SHA}-${BUILD_NUMBER}
               else
                 echo "false" > /tmp/${COMMIT_SHA}-${BUILD_NUMBER}
+              fi
+              mkdir -p ${TEMPDIR}/gitbook
+              git clone https://github.com/linuxserver/docker-documentation.git ${TEMPDIR}/gitbook/docker-documentation
+              if [ "${BRANCH_NAME}" = "master" ] && [ ! -f ${TEMPDIR}/gitbook/docker-documentation/images/docker-${CONTAINER_NAME}.md ] || [ "$(md5sum ${TEMPDIR}/gitbook/docker-documentation/images/docker-${CONTAINER_NAME}.md | awk '{ print $1 }')" != "$(md5sum ${TEMPDIR}/${CONTAINER_NAME}/docker-${CONTAINER_NAME}.md | awk '{ print $1 }')" ]; then
+                cp ${TEMPDIR}/${CONTAINER_NAME}/docker-${CONTAINER_NAME}.md ${TEMPDIR}/gitbook/docker-documentation/images/
+                cd ${TEMPDIR}/gitbook/docker-documentation/
+                git add images/docker-${CONTAINER_NAME}.md
+                git commit -m 'Bot Updating Templated Files'
+                git push https://LinuxServer-CI:${GITHUB_TOKEN}@github.com/linuxserver/docker-documentation.git --all
               fi
               rm -Rf ${TEMPDIR}'''
         script{

@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-domoticz
+external_type: github_stable
+release_type: prerelease
+release_tag: stable
+ls_branch: stable
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'domoticz'
+  - EXT_REPO = 'domoticz'
+  - BUILD_VERSION_ARG = 'DOMOTICZ_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-domoticz'
+  - CONTAINER_NAME = 'domoticz'
+  - DOCKERHUB_IMAGE = 'linuxserver/domoticz'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/domoticz'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/domoticz'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='8080'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TEST_RUN=true'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH=''

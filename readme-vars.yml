@@ -1,0 +1,88 @@
+---
+
+# project information
+project_name: domoticz
+project_url: "https://www.domoticz.com"
+project_logo: "https://github.com/domoticz/domoticz/raw/master/www/images/logo.png"
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device."
+project_blurb_optional_extras_enabled: false
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+  - { arch: "{{ arch_armhf }}", tag: "arm32v6-latest"}
+
+# development version
+# development version
+development_versions: true
+development_versions_items:
+  - { tag: "latest", desc: "Current latest head from master at https://github.com/domoticz/domoticz." }
+  - { tag: "stable", desc: "Latest stable version." }
+  - { tag: "stable-4.9700", desc: "Old stable version. Will not be updated anymore!" }
+  - { tag: "stable-3.815", desc: "Old stable version. Will not be updated anymore!" }
+  - { tag: "stable-3.5877", desc: "Old stable version. Will not be updated anymore!" }
+
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+param_usage_include_net: false
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "<path to data>", desc: "Where Domoticz stores config files and data." }
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "8080", internal_port: "8080", port_desc: "WebUI" }
+  - { external_port: "6144", internal_port: "6144", port_desc: "Domoticz communication port." }
+  - { external_port: "1443", internal_port: "1443", port_desc: "Domoticz communication port." }
+param_device_map: true
+param_devices:
+  - { device_path: "<path to device>", device_host_path: "<path to device>", desc: "For passing through USB devices." }
+cap_add_param: false
+
+# optional container parameters
+opt_param_usage_include_env: false
+opt_param_usage_include_vols: false
+opt_param_usage_include_ports: false
+opt_param_device_map: false
+opt_cap_add_param: false
+optional_block_1: true
+optional_block_1_items:
+  - |
+    ### Passing Through USB Devices
+
+    To get full use of Domoticz, you probably have a USB device you want to pass through. To figure out which device to pass through, you have to connect the device and look in dmesg for the device node created. Issue the command 'dmesg | tail' after you connected your device and you should see something like below.
+
+    ```
+    usb 1-1.2: new full-speed USB device number 7 using ehci-pci
+    ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+    usb 1-1.2: Detected FT232RL
+    usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+    ```
+    As you can see above, the device node created is ttyUSB0. It does not say where, but it's almost always in /dev/. The correct tag for passing through this USB device is '--device /dev/ttyUSB0:/dev/ttyUSB0'
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  To configure Domoticz, go to the IP of your docker host on the port you configured (default 8080), and add your hardware in Setup > Hardware.
+  The user manual is available at [www.domoticz.com]({{ project_url }})
+
+# changelog
+changelogs:
+  - { date: "11.02.19:", desc: "Add pipeline logic and multi arch." }
+  - { date: "02.07.18:", desc: "Add openssh package." }
+  - { date: "01.07.18:", desc: "Fix backup/restore in webgui." }
+  - { date: "03.04.18:", desc: "Add dependencies for BroadlinkRM2 plugin." }
+  - { date: "20.01.18:", desc: "Move telldus core to repo to prevent build fail when source site goes down." }
+  - { date: "18.01.18:", desc: "Remove logging to syslog in the run command to prevent double logging." }
+  - { date: "04.01.18:", desc: "Deprecate cpu_core routine lack of scaling." }
+  - { date: "08.12.17:", desc: "Rebase to alpine 3.7." }
+  - { date: "26.11.17:", desc: "Use cpu core counting routine to speed up build time." }
+  - { date: "28.05.17:", desc: "Rebase to alpine 3.6." }
+  - { date: "26.02.17:", desc: "Add curl and replace openssl with libressl." }
+  - { date: "11.02.17:", desc: "Update README." }
+  - { date: "03.01.17:", desc: "Initial Release." }

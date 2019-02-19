@@ -90,7 +90,7 @@ RUN \
  install && \
  echo "**** build domoticz ****" && \
  if [ -z ${DOMOTICZ_COMMIT+x} ]; then \
-	DOMOTICZ_COMMIT=$(curl -sX GET https://api.github.com/repos/domoticz/domoticz/commits/master \
+	DOMOTICZ_COMMIT=$(curl -sX GET https://api.github.com/repos/domoticz/domoticz/commits/development \
 	| jq -r '. | .sha'); \
  fi && \
  git clone https://github.com/domoticz/domoticz.git /tmp/domoticz && \

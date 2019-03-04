@@ -46,10 +46,10 @@ mosquitto-libs mosquitto-libs-1.4.15-r3
 mosquitto-libs++ mosquitto-libs++-1.4.15-r3
 curl curl-7.61.1-r1
 libressl libressl-2.7.5-r0
-openssh-keygen openssh-keygen-7.7_p1-r3
-openssh-client openssh-client-7.7_p1-r3
-openssh-sftp-server openssh-sftp-server-7.7_p1-r3
-openssh-server-common openssh-server-common-7.7_p1-r3
-openssh-server openssh-server-7.7_p1-r3
-openssh openssh-7.7_p1-r3
+openssh-keygen openssh-keygen-7.7_p1-r4
+openssh-client openssh-client-7.7_p1-r4
+openssh-sftp-server openssh-sftp-server-7.7_p1-r4
+openssh-server-common openssh-server-common-7.7_p1-r4
+openssh-server openssh-server-7.7_p1-r4
+openssh openssh-7.7_p1-r4
 python3-dev python3-dev-3.6.6-r0

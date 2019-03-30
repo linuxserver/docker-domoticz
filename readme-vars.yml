@@ -45,7 +45,9 @@ param_devices:
 cap_add_param: false
 
 # optional container parameters
-opt_param_usage_include_env: false
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "WEBROOT", env_value: "domoticz", desc: "Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying." }
 opt_param_usage_include_vols: false
 opt_param_usage_include_ports: false
 opt_param_device_map: false
@@ -73,6 +75,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "30.03.19:", desc: "Add env variable to set webroot." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
   - { date: "11.02.19:", desc: "Add pipeline logic and multi arch." }
   - { date: "02.07.18:", desc: "Add openssh package." }

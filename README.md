@@ -64,6 +64,7 @@ docker create \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
+  -e WEBROOT=domoticz `#optional` \
   -p 8080:8080 \
   -p 6144:6144 \
   -p 1443:1443 \
@@ -101,6 +102,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
+      - WEBROOT=domoticz #optional
     volumes:
       - <path to data>:/config
     ports:
@@ -124,6 +126,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
+| `-e WEBROOT=domoticz` | Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying. |
 | `-v /config` | Where Domoticz stores config files and data. |
 | `--device <path to device>` | For passing through USB devices. |
 
@@ -190,6 +193,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **30.03.19:** - Add env variable to set webroot.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
 * **11.02.19:** - Add pipeline logic and multi arch.
 * **02.07.18:** - Add openssh package.

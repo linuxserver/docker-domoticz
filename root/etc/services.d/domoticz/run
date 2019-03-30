@@ -1,7 +1,11 @@
 #!/usr/bin/with-contenv bash
+
+IFS=" " read -r -a RUN_ARRAY <<< "$WEBROOT"
+
 exec \
 	s6-setuidgid abc /var/lib/domoticz/domoticz \
 		-sslwww 1443 \
 		-sslcert /config/keys/server_cert.pem \
 		-userdata /config/ \
-		-dbase /config/domoticz.db
+		-dbase /config/domoticz.db \
+		-webroot "${RUN_ARRAY[@]}"

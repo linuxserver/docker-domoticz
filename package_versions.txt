@@ -44,8 +44,8 @@ openssh-sftp-server-7.7_p1-r4
 openzwave-1.4.164-r2
 openzwave-libs-1.4.164-r2
 pkgconf-1.5.3-r0
-python3-3.6.6-r0
-python3-dev-3.6.6-r0
+python3-3.6.8-r0
+python3-dev-3.6.8-r0
 readline-7.0.003-r0
 scanelf-1.2.3-r0
 shadow-4.5-r0

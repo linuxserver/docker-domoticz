@@ -75,6 +75,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "12.05.19:", desc: "Add boost dependencies and turn off static boost build. Bump to Alpine 3.9." }
   - { date: "30.03.19:", desc: "Add env variable to set webroot." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
   - { date: "19.02.19:", desc: "Fix branch for version logic." }

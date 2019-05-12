@@ -213,6 +213,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **12.05.19:** - Add boost dependencies and turn off static boost build. Bump to Alpine 3.9.
 * **30.03.19:** - Add env variable to set webroot.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
 * **19.02.19:** - Fix branch for version logic.

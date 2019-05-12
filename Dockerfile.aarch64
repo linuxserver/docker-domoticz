@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:arm64v8-3.8
+FROM lsiobase/alpine:arm64v8-3.9
 
 # set version label
 ARG BUILD_DATE
@@ -21,7 +21,6 @@ RUN \
 	automake \
 	binutils \
 	boost-dev \
-	cmake \
 	confuse-dev \
 	curl-dev \
 	doxygen \
@@ -45,8 +44,14 @@ RUN \
 	sqlite-dev \
 	tar \
 	zlib-dev && \
+ echo "**** install build packages from edge****" && \
+ apk add --no-cache --virtual=build-dependencies-edge --repository http://dl-3.alpinelinux.org/alpine/edge/main/ \
+	cmake && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
+	boost \
+	boost-system \
+	boost-thread \
 	curl \
 	eudev-libs \
 	libressl \
@@ -101,6 +106,7 @@ RUN \
 	-DUSE_BUILTIN_LUA=OFF \
 	-DUSE_BUILTIN_MQTT=OFF \
 	-DUSE_BUILTIN_SQLITE=OFF \
+	-DUSE_STATIC_BOOST=OFF \
 	-DUSE_STATIC_LIBSTDCXX=OFF \
 	-DUSE_STATIC_OPENZWAVE=OFF \
 	-Wno-dev && \
@@ -126,7 +132,8 @@ RUN \
  usermod -a -G 16,20 abc && \
  echo " **** cleanup ****" && \
  apk del --purge \
-	build-dependencies && \
+	build-dependencies \
+	build-dependencies-edge && \
  rm -rf \
 	/tmp/* \
 	/usr/lib/libftdi* \

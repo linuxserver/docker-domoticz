@@ -132,7 +132,8 @@ RUN \
  usermod -a -G 16,20 abc && \
  echo " **** cleanup ****" && \
  apk del --purge \
-	build-dependencies && \
+	build-dependencies \
+	build-dependencies-edge && \
  rm -rf \
 	/tmp/* \
 	/usr/lib/libftdi* \

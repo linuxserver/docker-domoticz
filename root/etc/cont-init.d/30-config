@@ -22,6 +22,8 @@ fi
 
 # set permissions for /config
 chown -R abc:abc \
-	/config
+	/config	\
+	/tmp \
+	/var/lib/domoticz
 chmod -R 764 \
 	/config

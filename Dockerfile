@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.8
+FROM lsiobase/alpine:3.10
 
 # set version label
 ARG BUILD_DATE
@@ -49,6 +49,7 @@ RUN \
  apk add --no-cache \
 	curl \
 	eudev-libs \
+	iputils \
 	libressl \
 	openssh \
 	openzwave \

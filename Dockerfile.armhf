@@ -54,6 +54,7 @@ RUN \
 	boost-thread \
 	curl \
 	eudev-libs \
+	iputils \
 	libressl \
 	openssh \
 	python3-dev && \

@@ -46,7 +46,7 @@ This image provides various versions that are available via tags. `latest` tag u
 
 | Tag | Description |
 | :----: | --- |
-| latest | Current latest head from master at https://github.com/domoticz/domoticz. |
+| latest | Current latest head from development at https://github.com/domoticz/domoticz. |
 | stable | Latest stable version. |
 | stable-4.9700 | Old stable version. Will not be updated anymore! |
 | stable-3.815 | Old stable version. Will not be updated anymore! |
@@ -216,6 +216,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **28.06.19:** - Rebasing to alpine 3.10. Add iputils for ping. Fix typo in readme. Fix permissions for custom icons.
 * **12.05.19:** - Add boost dependencies and turn off static boost build. Bump to Alpine 3.9.
 * **30.03.19:** - Add env variable to set webroot.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.

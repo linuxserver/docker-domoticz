@@ -47,6 +47,9 @@ RUN \
 	zlib-dev && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
+  	boost \
+	boost-thread \
+	boost-system \
 	curl \
 	eudev-libs \
 	iputils \
@@ -91,6 +94,7 @@ RUN \
 	-DUSE_BUILTIN_LUA=OFF \
 	-DUSE_BUILTIN_MQTT=OFF \
 	-DUSE_BUILTIN_SQLITE=OFF \
+	-DUSE_STATIC_BOOST=OFF \
 	-DUSE_STATIC_LIBSTDCXX=OFF \
 	-DUSE_STATIC_OPENZWAVE=OFF \
 	-Wno-dev && \

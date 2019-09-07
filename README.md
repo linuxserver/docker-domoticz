@@ -27,8 +27,8 @@ Find us at:
 [![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-domoticz.svg?style=flat-square&color=E68523)](https://github.com/linuxserver/docker-domoticz/releases)
 [![MicroBadger Layers](https://img.shields.io/microbadger/layers/linuxserver/domoticz.svg?style=flat-square&color=E68523)](https://microbadger.com/images/linuxserver/domoticz "Get your own version badge on microbadger.com")
 [![MicroBadger Size](https://img.shields.io/microbadger/image-size/linuxserver/domoticz.svg?style=flat-square&color=E68523)](https://microbadger.com/images/linuxserver/domoticz "Get your own version badge on microbadger.com")
-[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/domoticz.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/domoticz/domoticz)
-[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/domoticz.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/domoticz/domoticz)
+[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/domoticz.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/domoticz)
+[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/domoticz.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/domoticz)
 [![Build Status](https://ci.linuxserver.io/view/all/job/Docker-Pipeline-Builders/job/docker-domoticz/job/master/badge/icon?style=flat-square)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-domoticz/job/master/)
 [![](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/domoticz/latest/badge.svg)](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/domoticz/latest/index.html)
 

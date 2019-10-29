@@ -226,6 +226,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **29.10.19:** - Set capabilities for Domoticz binary so spawned processes can use sockets.
 * **28.06.19:** - Rebasing to alpine 3.10. Add iputils for ping. Fix typo in readme. Fix permissions for custom icons.
 * **12.05.19:** - Add boost dependencies and turn off static boost build. Bump to Alpine 3.9.
 * **30.03.19:** - Add env variable to set webroot.

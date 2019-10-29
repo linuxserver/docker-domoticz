@@ -75,6 +75,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "29.10.19:", desc: "Set capabilities for Domoticz binary so spawned processes can use sockets." }
   - { date: "28.06.19:", desc: "Rebasing to alpine 3.10. Add iputils for ping. Fix typo in readme. Fix permissions for custom icons." }
   - { date: "30.03.19:", desc: "Add env variable to set webroot." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }

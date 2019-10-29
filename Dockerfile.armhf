@@ -100,6 +100,8 @@ RUN \
 	-Wno-dev && \
  make && \
  make install && \
+ echo "**** set capabilities for domoticz binary ****" && \
+ setcap cap_net_raw=+eip /var/lib/domoticz/domoticz && \
  echo "**** install BroadlinkRM2 plugin dependencies ****" && \
  git clone https://github.com/mjg59/python-broadlink.git /tmp/python-broadlink && \
  cd /tmp/python-broadlink && \

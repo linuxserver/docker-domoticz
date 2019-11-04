@@ -2,6 +2,9 @@
 
 IFS=" " read -r -a RUN_ARRAY <<< "$WEBROOT"
 
+# set capabilities for domoticz binary
+setcap cap_net_raw=+eip /var/lib/domoticz/domoticz
+
 exec \
 	s6-setuidgid abc /var/lib/domoticz/domoticz \
 		-sslwww 1443 \

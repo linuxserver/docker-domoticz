@@ -21,6 +21,7 @@ RUN \
 	automake \
 	binutils \
 	boost-dev \
+	cmake \
 	confuse-dev \
 	curl-dev \
 	doxygen \
@@ -44,9 +45,6 @@ RUN \
 	sqlite-dev \
 	tar \
 	zlib-dev && \
- echo "**** install build packages from edge****" && \
- apk add --no-cache --virtual=build-dependencies-edge --repository http://dl-3.alpinelinux.org/alpine/edge/main/ \
-	cmake && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	boost \
@@ -133,8 +131,7 @@ RUN \
  usermod -a -G 16,20 abc && \
  echo " **** cleanup ****" && \
  apk del --purge \
-	build-dependencies \
-	build-dependencies-edge && \
+	build-dependencies && \
  rm -rf \
 	/tmp/* \
 	/usr/lib/libftdi* \

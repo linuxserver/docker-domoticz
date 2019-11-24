@@ -75,6 +75,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "24.11.19:", desc: "Change to using domoticz builtin Lua and MQTT." }
   - { date: "03.11.19:", desc: "Set capabilities for domoticz binary and move cmake from edge repo." }
   - { date: "28.06.19:", desc: "Rebasing to alpine 3.10. Add iputils for ping. Fix typo in readme. Fix permissions for custom icons." }
   - { date: "12.05.19:", desc: "Add boost dependencies and turn off static boost build. Bump to Alpine 3.9." }

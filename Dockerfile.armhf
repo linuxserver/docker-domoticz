@@ -36,7 +36,6 @@ RUN \
 	libusb-compat-dev \
 	libusb-dev \
 	linux-headers \
-	lua5.2-dev \
 	make \
 	mosquitto-dev \
 	musl-dev \
@@ -91,8 +90,8 @@ RUN \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DCMAKE_INSTALL_PREFIX=/var/lib/domoticz \
 	-DOpenZWave=/usr/lib/libopenzwave.so \
-	-DUSE_BUILTIN_LUA=OFF \
-	-DUSE_BUILTIN_MQTT=OFF \
+	-DUSE_BUILTIN_LUA=ON \
+	-DUSE_BUILTIN_MQTT=ON \
 	-DUSE_BUILTIN_SQLITE=OFF \
 	-DUSE_STATIC_BOOST=OFF \
 	-DUSE_STATIC_LIBSTDCXX=OFF \

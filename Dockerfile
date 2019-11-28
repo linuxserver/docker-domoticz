@@ -41,6 +41,7 @@ RUN \
 	mosquitto-dev \
 	musl-dev \
 	pkgconf \
+	sshpass \
 	sqlite-dev \
 	tar \
 	zlib-dev && \

@@ -75,6 +75,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "24.11.19:", desc: "Rebase to Alpine 3.11. Change to using apk install." }
   - { date: "24.11.19:", desc: "Change to using domoticz builtin Lua and MQTT." }
   - { date: "03.11.19:", desc: "2nd try setting capabilities for Domoticz binary." }
   - { date: "29.10.19:", desc: "Set capabilities for Domoticz binary so spawned processes can use sockets." }

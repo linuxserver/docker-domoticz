@@ -8,6 +8,12 @@ mkdir -p \
 [[ ! -e /config/scripts ]] && \
 	cp -R /var/lib/domoticz/scripts /config/
 
+# delete update scripts
+[[ -e /config/scripts/update_domoticz ]] && \
+	rm -rf /config/scripts/update_domoticz
+	rm -rf /config/scripts/restart_domoticz
+	rm -rf /config/scripts/download_update.sh
+
 # generate ssl certificate
 if [ -z ${TEST_RUN+x} ]; then
 	if [ ! -e /config/keys/server_cert.pem ]; then
@@ -22,8 +28,7 @@ fi
 
 # set permissions for /config
 chown -R abc:abc \
-	/config
+	/config \
 	/tmp
-	/var/lib/domoticz
 chmod -R 764 \
 	/config

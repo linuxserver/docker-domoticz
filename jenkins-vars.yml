@@ -2,14 +2,12 @@
 
 # jenkins variables
 project_name: docker-domoticz
-external_type: github_stable
-release_type: prerelease
+external_type: na
+custom_version_command: "curl -s http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/ |awk -F '(domoticz-|.apk)' '/domoticz.*.apk/ {print $2}'"
+release_type: stable
 release_tag: stable
 ls_branch: stable
 repo_vars:
-  - EXT_GIT_BRANCH = 'master'
-  - EXT_USER = 'domoticz'
-  - EXT_REPO = 'domoticz'
   - BUILD_VERSION_ARG = 'DOMOTICZ_RELEASE'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-domoticz'

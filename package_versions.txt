@@ -80,7 +80,7 @@ openssh-sftp-server-8.1_p1-r0
 openzwave-1.4.164-r4
 openzwave-libs-1.4.164-r4
 pkgconf-1.6.1-r1
-python2-2.7.16-r1
+python2-2.7.16-r2
 python3-3.7.5-r1
 python3-dev-3.7.5-r1
 readline-8.0.0-r0

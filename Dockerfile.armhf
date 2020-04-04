@@ -31,7 +31,7 @@ RUN \
 	wget \
 	zlib1g && \
  echo "**** link to python lib so domoticz finds it ****" && \
- ln -s /usr/lib/x86_64-linux-gnu/libpython3.6m.so.1.0 /usr/lib/x86_64-linux-gnu/libpython3.6m.so && \
+ ln -s /usr/lib/arm-linux-gnueabihf/libpython3.6m.so.1.0 /usr/lib/python3.6/config-3.6m-arm-linux-gnueabihf/libpython3.6m.so && \
  echo "**** install domoticz ****" && \
  if [ -z ${DOMOTICZ_RELEASE+x} ]; then \
 	DOMOTICZ_RELEASE=$(curl -sX GET "https://api.github.com/repos/domoticz/domoticz/releases/latest" \

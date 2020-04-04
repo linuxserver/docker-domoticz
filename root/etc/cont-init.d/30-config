@@ -6,7 +6,7 @@ mkdir -p \
 
 # copy default scripts from install
 [[ ! -e /config/scripts ]] && \
-	cp -R /var/lib/domoticz/scripts /config/
+	cp -R /defaults/scripts /config/
 
 # generate ssl certificate
 if [ -z ${TEST_RUN+x} ]; then
@@ -23,6 +23,4 @@ fi
 chown -R abc:abc \
 	/config \
 	/tmp \
-	/var/lib/domoticz
-chmod -R 764 \
-	/config
+	/usr/share/domoticz

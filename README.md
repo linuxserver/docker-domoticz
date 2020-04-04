@@ -60,8 +60,8 @@ This image provides various versions that are available via tags. `latest` tag u
 
 | Tag | Description |
 | :----: | --- |
-| latest | Current latest head from development at https://github.com/domoticz/domoticz. |
-| stable | Latest stable version. |
+| latest | Current latest stable. |
+| stable | old stable version. Please change to latest branch for stable releases. |
 | stable-4.9700 | Old stable version. Will not be updated anymore! |
 | stable-3.815 | Old stable version. Will not be updated anymore! |
 | stable-3.5877 | Old stable version. Will not be updated anymore! |
@@ -242,6 +242,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **04.04.20:** - Rebase to Ubuntu. Change to using prebuilt binaries. Move to stable release only.
 * **24.11.19:** - Change to using domoticz builtin Lua and MQTT.
 * **03.11.19:** - Set capabilities for domoticz binary and move cmake from edge repo.
 * **28.06.19:** - Rebasing to alpine 3.10. Add iputils for ping. Fix typo in readme. Fix permissions for custom icons.

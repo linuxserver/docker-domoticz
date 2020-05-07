@@ -3,7 +3,7 @@
 # jenkins variables
 project_name: docker-domoticz
 external_type: github_stable
-release_type: prerelease
+release_type: stable
 release_tag: stable
 ls_branch: stable
 repo_vars:

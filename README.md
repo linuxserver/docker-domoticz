@@ -7,7 +7,7 @@
 [![GitHub](https://img.shields.io/static/v1.svg?style=flat-square&color=E68523&label=linuxserver.io&message=GitHub&logo=github&logoColor=FFFFFF)](https://github.com/linuxserver "view the source for all of our repositories.")
 [![Open Collective](https://img.shields.io/opencollective/all/linuxserver.svg?style=flat-square&color=E68523&label=Supporters&logo=open%20collective&logoColor=FFFFFF)](https://opencollective.com/linuxserver "please consider helping us by either donating or contributing to our budget")
 
-The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring :-
+The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring:
 
  * regular and timely application updates
  * easy user mappings (PGID, PUID)
@@ -60,8 +60,8 @@ This image provides various versions that are available via tags. `latest` tag u
 
 | Tag | Description |
 | :----: | --- |
-| latest | Current latest head from development at https://github.com/domoticz/domoticz. |
-| stable | Latest stable version. |
+| latest | Current latest stable. |
+| stable | old stable version. Please change to latest branch for stable releases. |
 | stable-4.9700 | Old stable version. Will not be updated anymore! |
 | stable-3.815 | Old stable version. Will not be updated anymore! |
 | stable-3.5877 | Old stable version. Will not be updated anymore! |
@@ -107,7 +107,7 @@ Compatible with docker-compose v2 schemas.
 
 ```
 ---
-version: "2"
+version: "2.1"
 services:
   domoticz:
     image: linuxserver/domoticz
@@ -175,7 +175,13 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 
 To configure Domoticz, go to the IP of your docker host on the port you configured (default 8080), and add your hardware in Setup > Hardware.
 The user manual is available at [www.domoticz.com](https://www.domoticz.com)
+THIS BRANCH IS DEPRECATED! PLEASE CHANGE TO USING THE LATEST TAG FOR THE LATEST STABLE VERSION. NO MORE DEVELOPMENT BUILDS.
 
+
+## Docker Mods
+[![Docker Mods](https://img.shields.io/badge/dynamic/yaml?style=for-the-badge&color=E68523&label=mods&query=%24.mods%5B%27domoticz%27%5D.mod_count&url=https%3A%2F%2Fraw.githubusercontent.com%2Flinuxserver%2Fdocker-mods%2Fmaster%2Fmod-list.yml)](https://mods.linuxserver.io/?mod=domoticz "view available mods for this container.")
+
+We publish various [Docker Mods](https://github.com/linuxserver/docker-mods) to enable additional functionality within the containers. The list of Mods available for this image (if any) can be accessed via the dynamic badge above.
 
 
 ## Support Info
@@ -242,6 +248,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **07.05.20:** - Rebase to Ubuntu. Change to using prebuilt binaries. Move to stable release only.
 * **24.11.19:** - Change to using domoticz builtin Lua and MQTT.
 * **03.11.19:** - 2nd try setting capabilities for Domoticz binary.
 * **29.10.19:** - Set capabilities for Domoticz binary so spawned processes can use sockets.

@@ -1,4 +1,4 @@
-FROM lsiobase/ubuntu:bionic
+FROM lsiobase/ubuntu:focal
 
 # set version label
 ARG BUILD_DATE
@@ -15,7 +15,6 @@ ENV HOME="/config"
 RUN \
  echo "**** install runtime packages ****" && \
  apt-get update && \
- apt-get upgrade -y && \
  apt-get install -y --no-install-recommends \
 	curl \
 	cron \
@@ -23,7 +22,7 @@ RUN \
 	libcap2-bin \
 	libcurl3-gnutls \
 	libcurl4 \
-	libpython3.6 \
+	libpython3.8 \
 	libudev-dev \
 	libusb-0.1-4 \
 	mosquitto-clients \
@@ -33,7 +32,7 @@ RUN \
 	wget \
 	zlib1g && \
  echo "**** link to python lib so domoticz finds it ****" && \
- ln -s /usr/lib/x86_64-linux-gnu/libpython3.6m.so.1.0 /usr/lib/x86_64-linux-gnu/libpython3.6m.so && \
+ ln -s /usr/lib/x86_64-linux-gnu/libpython3.8.so.1.0 /usr/lib/x86_64-linux-gnu/libpython3.8.so && \
  echo "**** install domoticz ****" && \
  if [ -z ${DOMOTICZ_RELEASE+x} ]; then \
 	DOMOTICZ_RELEASE=$(curl -sX GET "https://api.github.com/repos/domoticz/domoticz/releases/latest" \

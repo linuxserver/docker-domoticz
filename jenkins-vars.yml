@@ -4,8 +4,8 @@
 project_name: docker-domoticz
 external_type: github_stable
 release_type: stable
-release_tag: latest
-ls_branch: master
+release_tag: stable
+ls_branch: stable
 repo_vars:
   - EXT_GIT_BRANCH = 'master'
   - EXT_USER = 'domoticz'

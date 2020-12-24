@@ -14,12 +14,12 @@ available_architectures:
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
   - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
-# development version
+
 # development version
 development_versions: true
 development_versions_items:
-  - { tag: "latest", desc: "Current latest head from development at https://github.com/domoticz/domoticz." }
-  - { tag: "stable", desc: "Latest stable version." }
+  - { tag: "latest", desc: "Current latest stable." }
+  - { tag: "stable", desc: "old stable version. Please change to latest branch for stable releases." }
   - { tag: "stable-4.9700", desc: "Old stable version. Will not be updated anymore!" }
   - { tag: "stable-3.815", desc: "Old stable version. Will not be updated anymore!" }
   - { tag: "stable-3.5877", desc: "Old stable version. Will not be updated anymore!" }
@@ -72,9 +72,11 @@ app_setup_block_enabled: true
 app_setup_block: |
   To configure Domoticz, go to the IP of your docker host on the port you configured (default 8080), and add your hardware in Setup > Hardware.
   The user manual is available at [www.domoticz.com]({{ project_url }})
+  THIS BRANCH IS DEPRECATED! PLEASE CHANGE TO USING THE LATEST TAG FOR THE LATEST STABLE VERSION. NO MORE DEVELOPMENT BUILDS.
 
 # changelog
 changelogs:
+  - { date: "07.05.20:", desc: "Rebase to Ubuntu. Change to using prebuilt binaries. Move to stable release only." }
   - { date: "24.11.19:", desc: "Change to using domoticz builtin Lua and MQTT." }
   - { date: "03.11.19:", desc: "2nd try setting capabilities for Domoticz binary." }
   - { date: "29.10.19:", desc: "Set capabilities for Domoticz binary so spawned processes can use sockets." }

@@ -26,7 +26,7 @@ pipeline {
     DOCKERHUB_IMAGE = 'linuxserver/domoticz'
     DEV_DOCKERHUB_IMAGE = 'lsiodev/domoticz'
     PR_DOCKERHUB_IMAGE = 'lspipepr/domoticz'
-    DIST_IMAGE = 'alpine'
+    DIST_IMAGE = 'ubuntu'
     MULTIARCH='true'
     CI='true'
     CI_WEB='true'

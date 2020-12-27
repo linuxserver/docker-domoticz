@@ -25,3 +25,23 @@ chown -R abc:abc \
 	/config \
 	/tmp \
 	/usr/share/domoticz
+	
+# echo deprecated
+echo '
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.
+This branch is deprecated! Use the latest tag to get the latest stable release.'

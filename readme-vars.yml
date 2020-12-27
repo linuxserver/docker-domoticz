@@ -19,7 +19,7 @@ available_architectures:
 development_versions: true
 development_versions_items:
   - { tag: "latest", desc: "Current latest stable." }
-  - { tag: "stable", desc: "old stable version. Please change to latest branch for stable releases." }
+  - { tag: "stable", desc: "Old stable version. Please change to latest branch for stable releases." }
   - { tag: "stable-4.9700", desc: "Old stable version. Will not be updated anymore!" }
   - { tag: "stable-3.815", desc: "Old stable version. Will not be updated anymore!" }
   - { tag: "stable-3.5877", desc: "Old stable version. Will not be updated anymore!" }
@@ -76,7 +76,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "07.05.20:", desc: "Rebase to Ubuntu. Change to using prebuilt binaries. Move to stable release only." }
+  - { date: "26.12.20:", desc: "Rebase to Ubuntu Focal and deprecate stable, see [here](https://docs.linuxserver.io/faq#my-host-is-incompatible-with-images-based-on-ubuntu-focal) for troubleshooting armhf." }
   - { date: "24.11.19:", desc: "Change to using domoticz builtin Lua and MQTT." }
   - { date: "03.11.19:", desc: "2nd try setting capabilities for Domoticz binary." }
   - { date: "29.10.19:", desc: "Set capabilities for Domoticz binary so spawned processes can use sockets." }

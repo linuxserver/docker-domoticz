@@ -124,8 +124,8 @@ libstdc++610.2.0-5ubuntu1~20.04
 libsystemd0245.4-4ubuntu3.5
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
-libudev1245.4-4ubuntu3.5
-libudev-dev245.4-4ubuntu3.5
+libudev1245.4-4ubuntu3.6
+libudev-dev245.4-4ubuntu3.6
 libunistring20.9.10-2
 libusb-0.1-42:0.1.12-32
 libuuid12.34-0.1ubuntu9.1
@@ -170,7 +170,7 @@ sensible-utils0.0.12+nmu1
 sysvinit-utils2.96-2.1ubuntu1
 tar1.30+dfsg-7ubuntu0.20.04.1
 tzdata2021a-0ubuntu0.20.04
-ubuntu-keyring2020.02.11.2
+ubuntu-keyring2020.02.11.4
 unzip6.0-25ubuntu1
 util-linux2.34-0.1ubuntu9.1
 wget1.20.3-1ubuntu1

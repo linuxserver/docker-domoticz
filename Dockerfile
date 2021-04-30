@@ -65,3 +65,8 @@ RUN \
 
 # copy local files
 COPY root/ /
+
+# expose ports
+EXPOSE 1443
+EXPOSE 6144
+EXPOSE 8080

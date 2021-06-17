@@ -124,8 +124,8 @@ libstdc++610.2.0-5ubuntu1~20.04
 libsystemd0245.4-4ubuntu3.6
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
-libudev1245.4-4ubuntu3.6
-libudev-dev245.4-4ubuntu3.6
+libudev1245.4-4ubuntu3.7
+libudev-dev245.4-4ubuntu3.7
 libunistring20.9.10-2
 libusb-0.1-42:0.1.12-32
 libuuid12.34-0.1ubuntu9.1

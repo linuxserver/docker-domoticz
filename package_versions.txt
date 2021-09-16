@@ -9,7 +9,7 @@ bzip21.0.8-2
 ca-certificates20210119~20.04.1
 coreutils8.30-3ubuntu2
 cron3.0pl1-136ubuntu1
-curl7.68.0-1ubuntu2.6
+curl7.68.0-1ubuntu2.7
 dash0.5.10.2-6
 debconf1.5.73
 debianutils4.9.1
@@ -52,8 +52,8 @@ libcap-ng00.7.9-2.1build1
 libc-bin2.31-0ubuntu9.2
 libcom-err21.45.5-2ubuntu1
 libcrypt11:4.4.10-10ubuntu4
-libcurl3-gnutls7.68.0-1ubuntu2.6
-libcurl47.68.0-1ubuntu2.6
+libcurl3-gnutls7.68.0-1ubuntu2.7
+libcurl47.68.0-1ubuntu2.7
 libdb5.35.3.28+dfsg1-0.6ubuntu2
 libdebconfclient00.251ubuntu1
 libexpat12.2.9-1build1
@@ -124,8 +124,8 @@ libstdc++610.3.0-1ubuntu1~20.04
 libsystemd0245.4-4ubuntu3.11
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
-libudev1245.4-4ubuntu3.11
-libudev-dev245.4-4ubuntu3.11
+libudev1245.4-4ubuntu3.13
+libudev-dev245.4-4ubuntu3.13
 libunistring20.9.10-2
 libusb-0.1-42:0.1.12-32
 libuuid12.34-0.1ubuntu9.1

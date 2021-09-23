@@ -61,7 +61,7 @@ libext2fs21.45.5-2ubuntu1
 libfdisk12.34-0.1ubuntu9.1
 libffi73.3-4
 libgcc-s110.3.0-1ubuntu1~20.04
-libgcrypt201.8.5-5ubuntu1
+libgcrypt201.8.5-5ubuntu1.1
 libgmp102:6.2.0+dfsg-4
 libgnutls303.6.13-2ubuntu1.6
 libgpg-error01.37-1
@@ -121,7 +121,7 @@ libss21.45.5-2ubuntu1
 libssh-40.9.3-2ubuntu2.2
 libssl1.11.1.1f-1ubuntu2.8
 libstdc++610.3.0-1ubuntu1~20.04
-libsystemd0245.4-4ubuntu3.11
+libsystemd0245.4-4ubuntu3.13
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
 libudev1245.4-4ubuntu3.13

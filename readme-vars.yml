@@ -40,7 +40,7 @@ param_ports:
   - { external_port: "1443", internal_port: "1443", port_desc: "Domoticz communication port." }
 param_device_map: true
 param_devices:
-  - { device_path: "<path to device>", device_host_path: "<path to device>", desc: "For passing through USB devices." }
+  - { device_path: "path to device", device_host_path: "path to device", desc: "For passing through USB devices." }
 cap_add_param: false
 
 # optional container parameters

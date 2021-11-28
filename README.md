@@ -99,7 +99,7 @@ services:
       - 6144:6144
       - 1443:1443
     devices:
-      - <path to device>:<path to device>
+      - path to device:path to device
     restart: unless-stopped
 ```
 
@@ -116,7 +116,7 @@ docker run -d \
   -p 6144:6144 \
   -p 1443:1443 \
   -v <path to data>:/config \
-  --device <path to device>:<path to device> \
+  --device path to device:path to device \
   --restart unless-stopped \
   lscr.io/linuxserver/domoticz
 ```
@@ -147,7 +147,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
 | `-e WEBROOT=domoticz` | Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying. |
 | `-v /config` | Where Domoticz stores config files and data. |
-| `--device <path to device>` | For passing through USB devices. |
+| `--device path to device` | For passing through USB devices. |
 
 ## Environment variables from files (Docker secrets)
 

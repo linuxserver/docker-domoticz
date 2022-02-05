@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-IFS=" " read -r -a RUN_ARRAY <<< "$WEBROOT"
+IFS=" " read -r -a RUN_ARRAY <<< "${WEBROOT:-/}"
 
 # set capabilities for domoticz binary
 setcap cap_net_raw=+eip /usr/bin/domoticz

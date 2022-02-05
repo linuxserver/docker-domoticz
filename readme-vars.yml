@@ -74,6 +74,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "05.02.22:", desc: "Set default webroot to /." }
   - { date: "26.12.20:", desc: "Rebase to Ubuntu Focal, see [here](https://docs.linuxserver.io/faq#my-host-is-incompatible-with-images-based-on-ubuntu-focal) for troubleshooting armhf." }
   - { date: "24.11.19:", desc: "Change to using domoticz builtin Lua and MQTT." }
   - { date: "03.11.19:", desc: "Set capabilities for domoticz binary and move cmake from edge repo." }

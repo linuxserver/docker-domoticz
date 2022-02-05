@@ -259,6 +259,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **05.02.22:** - Set default webroot to /.
 * **26.12.20:** - Rebase to Ubuntu Focal, see [here](https://docs.linuxserver.io/faq#my-host-is-incompatible-with-images-based-on-ubuntu-focal) for troubleshooting armhf.
 * **24.11.19:** - Change to using domoticz builtin Lua and MQTT.
 * **03.11.19:** - Set capabilities for domoticz binary and move cmake from edge repo.

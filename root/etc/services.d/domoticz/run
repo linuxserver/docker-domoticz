@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-IFS=" " read -r -a RUN_ARRAY <<< "$WEBROOT"
+IFS=" " read -r -a RUN_ARRAY <<< "${WEBROOT:-/}"
 
 # set capabilities for domoticz binary
 setcap cap_net_raw=+eip /usr/bin/domoticz
@@ -8,7 +8,7 @@ setcap cap_net_raw=+eip /usr/bin/domoticz
 exec \
 	s6-setuidgid abc /usr/bin/domoticz \
 		-approot /usr/share/domoticz/ \
-		-dbase /config/domoticz.db \
+		-dbase "${DBASE:-/config/domoticz.db}" \
 		-noupdate \
 		-sslwww 1443 \
 		-sslcert /config/keys/server_cert.pem \

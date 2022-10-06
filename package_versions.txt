@@ -174,4 +174,4 @@ ubuntu-keyring2020.02.11.4
 unzip6.0-25ubuntu1
 util-linux2.34-0.1ubuntu9.3
 wget1.20.3-1ubuntu2
-zlib1g1:1.2.11.dfsg-2ubuntu1.3
+zlib1g1:1.2.11.dfsg-2ubuntu1.4

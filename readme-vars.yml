@@ -15,13 +15,9 @@ available_architectures:
   - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
 # development version
-development_versions: true
+development_versions: false
 development_versions_items:
   - { tag: "latest", desc: "Current latest stable." }
-  - { tag: "stable", desc: "Old stable version. Please change to latest branch for stable releases." }
-  - { tag: "stable-4.9700", desc: "Old stable version. Will not be updated anymore!" }
-  - { tag: "stable-3.815", desc: "Old stable version. Will not be updated anymore!" }
-  - { tag: "stable-3.5877", desc: "Old stable version. Will not be updated anymore!" }
 
 # container parameters
 common_param_env_vars_enabled: true
@@ -75,6 +71,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "15.10.22:", desc: "Remove deprecated legacy stable branches." }
   - { date: "05.02.22:", desc: "Set default webroot to /. Add env. variable for setting custom databas path." }
   - { date: "26.12.20:", desc: "Rebase to Ubuntu Focal, see [here](https://docs.linuxserver.io/faq#my-host-is-incompatible-with-images-based-on-ubuntu-focal) for troubleshooting armhf." }
   - { date: "24.11.19:", desc: "Change to using domoticz builtin Lua and MQTT." }

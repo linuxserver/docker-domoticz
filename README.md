@@ -58,18 +58,6 @@ The architectures supported by this image are:
 | arm64 | ✅ | arm64v8-\<version tag\> |
 | armhf| ✅ | arm32v7-\<version tag\> |
 
-## Version Tags
-
-This image provides various versions that are available via tags. Please read the descriptions carefully and exercise caution when using unstable or development tags.
-
-| Tag | Available | Description |
-| :----: | :----: |--- |
-| latest | ✅ | Current latest stable. |
-| stable | ✅ | Old stable version. Please change to latest branch for stable releases. |
-| stable-4.9700 | ✅ | Old stable version. Will not be updated anymore! |
-| stable-3.815 | ✅ | Old stable version. Will not be updated anymore! |
-| stable-3.5877 | ✅ | Old stable version. Will not be updated anymore! |
-
 ## Application Setup
 
 To configure Domoticz, go to the IP of your docker host on the port you configured (default 8080), and add your hardware in Setup > Hardware.
@@ -262,6 +250,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **15.10.22:** - Remove deprecated legacy stable branches.
 * **05.02.22:** - Set default webroot to /. Add env. variable for setting custom databas path.
 * **26.12.20:** - Rebase to Ubuntu Focal, see [here](https://docs.linuxserver.io/faq#my-host-is-incompatible-with-images-based-on-ubuntu-focal) for troubleshooting armhf.
 * **24.11.19:** - Change to using domoticz builtin Lua and MQTT.

@@ -56,7 +56,7 @@ libcurl3-gnutls7.68.0-1ubuntu2.14
 libcurl47.68.0-1ubuntu2.14
 libdb5.35.3.28+dfsg1-0.6ubuntu2
 libdebconfclient00.251ubuntu1
-libexpat12.2.9-1ubuntu0.5
+libexpat12.2.9-1ubuntu0.6
 libext2fs21.45.5-2ubuntu1
 libfdisk12.34-0.1ubuntu9.3
 libffi73.3-4
@@ -124,8 +124,8 @@ libstdc++610.3.0-1ubuntu1~20.04
 libsystemd0245.4-4ubuntu3.15
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
-libudev1245.4-4ubuntu3.18
-libudev-dev245.4-4ubuntu3.18
+libudev1245.4-4ubuntu3.19
+libudev-dev245.4-4ubuntu3.19
 libunistring20.9.10-2
 libusb-0.1-42:0.1.12-32
 libuuid12.34-0.1ubuntu9.3
@@ -169,7 +169,7 @@ sed4.7-1
 sensible-utils0.0.12+nmu1
 sysvinit-utils2.96-2.1ubuntu1
 tar1.30+dfsg-7ubuntu0.20.04.2
-tzdata2022f-0ubuntu0.20.04.0
+tzdata2022f-0ubuntu0.20.04.1
 ubuntu-keyring2020.02.11.4
 unzip6.0-25ubuntu1.1
 util-linux2.34-0.1ubuntu9.3

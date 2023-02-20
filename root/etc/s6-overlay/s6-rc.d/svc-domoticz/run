@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+IFS=" " read -r -a RUN_ARRAY <<< "${WEBROOT:-/}"
+
+# set capabilities for domoticz binary
+setcap cap_net_raw=+eip /usr/bin/domoticz
+
+exec \
+    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 8080" \
+        s6-setuidgid abc /usr/bin/domoticz \
+            -approot /usr/share/domoticz/ \
+            -dbase "${DBASE:-/config/domoticz.db}" \
+            -noupdate \
+            -sslwww 1443 \
+            -sslcert /config/keys/server_cert.pem \
+            -userdata /config/ \
+            -webroot "${RUN_ARRAY[@]}"

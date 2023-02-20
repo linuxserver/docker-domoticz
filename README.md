@@ -83,7 +83,7 @@ services:
       - WEBROOT=domoticz #optional
       - "DBASE=<path to database>" #optional
     volumes:
-      - <path to data>:/config
+      - /path/to/data:/config
     ports:
       - 8080:8080
       - 6144:6144
@@ -106,7 +106,7 @@ docker run -d \
   -p 8080:8080 \
   -p 6144:6144 \
   -p 1443:1443 \
-  -v <path to data>:/config \
+  -v /path/to/data:/config \
   --device path to device:path to device \
   --restart unless-stopped \
   lscr.io/linuxserver/domoticz:latest
@@ -251,6 +251,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.02.23:** - Migrate to s6v3.
 * **15.10.22:** - Remove deprecated legacy stable branches.
 * **05.02.22:** - Set default webroot to /. Add env. variable for setting custom databas path.
 * **26.12.20:** - Rebase to Ubuntu Focal, see [here](https://docs.linuxserver.io/faq#my-host-is-incompatible-with-images-based-on-ubuntu-focal) for troubleshooting armhf.

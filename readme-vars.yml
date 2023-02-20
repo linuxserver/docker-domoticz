@@ -28,7 +28,7 @@ param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "<path to data>", desc: "Where Domoticz stores config files and data." }
+  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "Where Domoticz stores config files and data." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "8080", internal_port: "8080", port_desc: "WebUI" }
@@ -71,6 +71,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "20.02.23:", desc: "Migrate to s6v3." }
   - { date: "15.10.22:", desc: "Remove deprecated legacy stable branches." }
   - { date: "05.02.22:", desc: "Set default webroot to /. Add env. variable for setting custom databas path." }
   - { date: "26.12.20:", desc: "Rebase to Ubuntu Focal, see [here](https://docs.linuxserver.io/faq#my-host-is-incompatible-with-images-based-on-ubuntu-focal) for troubleshooting armhf." }

@@ -132,8 +132,8 @@ libstdc++6             10.3.0-1ubuntu1~20.04              deb
 libsystemd0            245.4-4ubuntu3.15                  deb     
 libtasn1-6             4.16.0-2                           deb     
 libtinfo6              6.2-0ubuntu2                       deb     
-libudev-dev            245.4-4ubuntu3.19                  deb     
-libudev1               245.4-4ubuntu3.19                  deb     
+libudev-dev            245.4-4ubuntu3.20                  deb     
+libudev1               245.4-4ubuntu3.20                  deb     
 libunistring2          0.9.10-2                           deb     
 libusb-0.1-4           2:0.1.12-32                        deb     
 libuuid1               2.34-0.1ubuntu9.3                  deb     

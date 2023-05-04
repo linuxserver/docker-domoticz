@@ -185,7 +185,7 @@ setuptools             45.2.0                             python
 six                    1.14.0                             python  
 sysvinit-utils         2.96-2.1ubuntu1                    deb     
 tar                    1.30+dfsg-7ubuntu0.20.04.2         deb     
-tzdata                 2023c-0ubuntu0.20.04.0             deb     
+tzdata                 2023c-0ubuntu0.20.04.1             deb     
 ubuntu-keyring         2020.02.11.4                       deb     
 unzip                  6.0-25ubuntu1.1                    deb     
 urllib3                1.25.8                             python  

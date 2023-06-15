@@ -54,8 +54,8 @@ libbz2-1.0             1.0.8-2                            deb
 libc-bin               2.31-0ubuntu9.9                    deb     
 libc6                  2.31-0ubuntu9.9                    deb     
 libcap-ng0             0.7.9-2.1build1                    deb     
-libcap2                1:2.32-1                           deb     
-libcap2-bin            1:2.32-1                           deb     
+libcap2                1:2.32-1ubuntu0.1                  deb     
+libcap2-bin            1:2.32-1ubuntu0.1                  deb     
 libcom-err2            1.45.5-2ubuntu1.1                  deb     
 libcrypt1              1:4.4.10-10ubuntu4                 deb     
 libcurl3-gnutls        7.68.0-1ubuntu2.18                 deb     
@@ -132,8 +132,8 @@ libstdc++6             10.3.0-1ubuntu1~20.04              deb
 libsystemd0            245.4-4ubuntu3.21                  deb     
 libtasn1-6             4.16.0-2                           deb     
 libtinfo6              6.2-0ubuntu2.1                     deb     
-libudev-dev            245.4-4ubuntu3.21                  deb     
-libudev1               245.4-4ubuntu3.21                  deb     
+libudev-dev            245.4-4ubuntu3.22                  deb     
+libudev1               245.4-4ubuntu3.22                  deb     
 libunistring2          0.9.10-2                           deb     
 libusb-0.1-4           2:0.1.12-32                        deb     
 libuuid1               2.34-0.1ubuntu9.3                  deb     
@@ -159,7 +159,7 @@ pip                    20.0.2                             python
 procps                 2:3.3.16-1ubuntu2.3                deb     
 publicsuffix           20200303.0012-1                    deb     
 python                 3.8.10                             binary  
-python-pip-whl         20.0.2-5ubuntu1.8                  deb     
+python-pip-whl         20.0.2-5ubuntu1.9                  deb     
 python3                3.8.2-0ubuntu2                     deb     
 python3-certifi        2019.11.28-1                       deb     
 python3-chardet        3.0.4-4build1                      deb     
@@ -167,9 +167,9 @@ python3-distutils      3.8.10-0ubuntu1~20.04              deb
 python3-idna           2.8-1                              deb     
 python3-lib2to3        3.8.10-0ubuntu1~20.04              deb     
 python3-minimal        3.8.2-0ubuntu2                     deb     
-python3-pip            20.0.2-5ubuntu1.8                  deb     
+python3-pip            20.0.2-5ubuntu1.9                  deb     
 python3-pkg-resources  45.2.0-1ubuntu0.1                  deb     
-python3-requests       2.22.0-2ubuntu1                    deb     
+python3-requests       2.22.0-2ubuntu1.1                  deb     
 python3-setuptools     45.2.0-1ubuntu0.1                  deb     
 python3-six            1.14.0-2                           deb     
 python3-urllib3        1.25.8-2ubuntu0.2                  deb     

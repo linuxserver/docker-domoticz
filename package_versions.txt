@@ -5,6 +5,7 @@ apt-utils              2.0.9                              deb
 base-files             11ubuntu5.7                        deb     
 base-passwd            3.5.47                             deb     
 bash                   5.0-6ubuntu1.2                     deb     
+bash                   5.0.17                             binary  
 bsdutils               1:2.34-0.1ubuntu9.4                deb     
 bzip2                  1.0.8-2                            deb     
 ca-certificates        20230311ubuntu0.20.04.1            deb     
@@ -158,7 +159,6 @@ pinentry-curses        1.1.0-3build1                      deb
 pip                    20.0.2                             python  
 procps                 2:3.3.16-1ubuntu2.3                deb     
 publicsuffix           20200303.0012-1                    deb     
-python                 3.8.10                             binary  
 python-pip-whl         20.0.2-5ubuntu1.9                  deb     
 python3                3.8.2-0ubuntu2                     deb     
 python3-certifi        2019.11.28-1                       deb     

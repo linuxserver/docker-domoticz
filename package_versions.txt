@@ -53,7 +53,7 @@ libbrotli1             1.0.7-6ubuntu0.1                   deb
 libbsd0                0.10.0-1                           deb     
 libbz2-1.0             1.0.8-2                            deb     
 libc-bin               2.31-0ubuntu9.9                    deb     
-libc6                  2.31-0ubuntu9.9                    deb     
+libc6                  2.31-0ubuntu9.12                   deb     
 libcap-ng0             0.7.9-2.1build1                    deb     
 libcap2                1:2.32-1ubuntu0.1                  deb     
 libcap2-bin            1:2.32-1ubuntu0.1                  deb     
@@ -140,7 +140,7 @@ libusb-0.1-4           2:0.1.12-32                        deb
 libuuid1               2.34-0.1ubuntu9.4                  deb     
 libwind0-heimdal       7.7.0+dfsg-1ubuntu1.4              deb     
 libzstd1               1.4.4+dfsg-3ubuntu0.1              deb     
-locales                2.31-0ubuntu9.9                    deb     
+locales                2.31-0ubuntu9.12                   deb     
 login                  1:4.8.1-1ubuntu5.20.04.4           deb     
 logsave                1.45.5-2ubuntu1.1                  deb     
 lsb-base               11.1.0ubuntu2                      deb     

@@ -13,7 +13,7 @@ certifi                2019.11.28                         python
 chardet                3.0.4                              python  
 coreutils              8.30-3ubuntu2                      deb     
 cron                   3.0pl1-136ubuntu1                  deb     
-curl                   7.68.0-1ubuntu2.19                 deb     
+curl                   7.68.0-1ubuntu2.20                 deb     
 dash                   0.5.10.2-6                         deb     
 debconf                1.5.73                             deb     
 debianutils            4.9.1                              deb     
@@ -59,8 +59,8 @@ libcap2                1:2.32-1ubuntu0.1                  deb
 libcap2-bin            1:2.32-1ubuntu0.1                  deb     
 libcom-err2            1.45.5-2ubuntu1.1                  deb     
 libcrypt1              1:4.4.10-10ubuntu4                 deb     
-libcurl3-gnutls        7.68.0-1ubuntu2.19                 deb     
-libcurl4               7.68.0-1ubuntu2.19                 deb     
+libcurl3-gnutls        7.68.0-1ubuntu2.20                 deb     
+libcurl4               7.68.0-1ubuntu2.20                 deb     
 libdb5.3               5.3.28+dfsg1-0.6ubuntu2            deb     
 libdebconfclient0      0.251ubuntu1                       deb     
 libexpat1              2.2.9-1ubuntu0.6                   deb     

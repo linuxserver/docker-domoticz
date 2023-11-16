@@ -159,7 +159,7 @@ pinentry-curses        1.1.0-3build1                      deb
 pip                    20.0.2                             python  
 procps                 2:3.3.16-1ubuntu2.3                deb     
 publicsuffix           20200303.0012-1                    deb     
-python-pip-whl         20.0.2-5ubuntu1.9                  deb     
+python-pip-whl         20.0.2-5ubuntu1.10                 deb     
 python3                3.8.2-0ubuntu2                     deb     
 python3-certifi        2019.11.28-1                       deb     
 python3-chardet        3.0.4-4build1                      deb     
@@ -167,7 +167,7 @@ python3-distutils      3.8.10-0ubuntu1~20.04              deb
 python3-idna           2.8-1                              deb     
 python3-lib2to3        3.8.10-0ubuntu1~20.04              deb     
 python3-minimal        3.8.2-0ubuntu2                     deb     
-python3-pip            20.0.2-5ubuntu1.9                  deb     
+python3-pip            20.0.2-5ubuntu1.10                 deb     
 python3-pkg-resources  45.2.0-1ubuntu0.1                  deb     
 python3-requests       2.22.0-2ubuntu1.1                  deb     
 python3-setuptools     45.2.0-1ubuntu0.1                  deb     

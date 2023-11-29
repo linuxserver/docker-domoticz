@@ -97,7 +97,7 @@ libmpdec2              2.4.2-3                            deb
 libncurses6            6.2-0ubuntu2.1                     deb     
 libncursesw6           6.2-0ubuntu2.1                     deb     
 libnettle7             3.5.1+really3.5.1-2ubuntu0.2       deb     
-libnghttp2-14          1.40.0-1ubuntu0.1                  deb     
+libnghttp2-14          1.40.0-1ubuntu0.2                  deb     
 libnpth0               1.6-1                              deb     
 libonig5               6.9.4-1                            deb     
 libp11-kit0            0.23.20-1ubuntu0.1                 deb     
@@ -110,9 +110,9 @@ libpcre3               2:8.39-12ubuntu0.1                 deb
 libprocps8             2:3.3.16-1ubuntu2.3                deb     
 libpsl5                0.21.0-1ubuntu1                    deb     
 libpython3-stdlib      3.8.2-0ubuntu2                     deb     
-libpython3.8           3.8.10-0ubuntu1~20.04.8            deb     
-libpython3.8-minimal   3.8.10-0ubuntu1~20.04.8            deb     
-libpython3.8-stdlib    3.8.10-0ubuntu1~20.04.8            deb     
+libpython3.8           3.8.10-0ubuntu1~20.04.9            deb     
+libpython3.8-minimal   3.8.10-0ubuntu1~20.04.9            deb     
+libpython3.8-stdlib    3.8.10-0ubuntu1~20.04.9            deb     
 libreadline8           8.0-4                              deb     
 libroken18-heimdal     7.7.0+dfsg-1ubuntu1.4              deb     
 librtmp1               2.4+20151223.gitfa8646d.1-2build1  deb     
@@ -174,8 +174,8 @@ python3-setuptools     45.2.0-1ubuntu0.1                  deb
 python3-six            1.14.0-2                           deb     
 python3-urllib3        1.25.8-2ubuntu0.3                  deb     
 python3-wheel          0.34.2-1ubuntu0.1                  deb     
-python3.8              3.8.10-0ubuntu1~20.04.8            deb     
-python3.8-minimal      3.8.10-0ubuntu1~20.04.8            deb     
+python3.8              3.8.10-0ubuntu1~20.04.9            deb     
+python3.8-minimal      3.8.10-0ubuntu1~20.04.9            deb     
 readline-common        8.0-4                              deb     
 requests               2.22.0                             python  
 sed                    4.7-1                              deb     

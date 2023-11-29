@@ -26,6 +26,9 @@ Find us at:
 * [GitHub](https://github.com/linuxserver) - view the source for all of our repositories.
 * [Open Collective](https://opencollective.com/linuxserver) - please consider helping us by either donating or contributing to our budget
 
+# This image is deprecated. We will not offer support for this image and it will not be updated.
+
+
 # [linuxserver/domoticz](https://github.com/linuxserver/docker-domoticz)
 
 [![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fdomoticz?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Fdomoticz)
@@ -317,6 +320,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **29.11.23:** - Deprecate.
 * **06.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
 * **20.02.23:** - Migrate to s6v3.
 * **15.10.22:** - Remove deprecated legacy stable branches.
